@@ -1,0 +1,882 @@
+[Sat Dec  2 02:44:03 2023] PHP 8.1.2-1ubuntu2.14 Development Server (http://0.0.0.0:8080) started
+[Sat Dec  2 02:44:38 2023] 197.55.43.227:59468 Accepted
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59468 [200]: GET /
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59468 Closing
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59506 Accepted
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59484 Accepted
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59490 Accepted
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59480 Accepted
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59506 [404]: GET /public/assets/installation/assets/css/bootstrap.min.css - No such file or directory
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59506 Closing
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59484 [404]: GET /public/assets/installation/assets/css/style.css - No such file or directory
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59484 Closing
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59480 [200]: GET /_debugbar/assets/javascript?v=1697073052
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59480 Closing
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59516 Accepted
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59490 [200]: GET /_debugbar/assets/stylesheets?v=1697073052&theme=auto
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59490 Closing
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59522 Accepted
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59516 [404]: GET /public/assets/installation/assets/img/svg-icons/database-name.svg - No such file or directory
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59516 Closing
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59522 [404]: GET /public/assets/installation/assets/img/favicon.svg - No such file or directory
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59522 Closing
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59532 Accepted
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59532 [404]: GET /public/assets/installation/assets/img/svg-icons/database-password.svg - No such file or directory
+[Sat Dec  2 02:44:39 2023] 197.55.43.227:59532 Closing
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59548 Accepted
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59548 [404]: GET /public/assets/installation/assets/img/svg-icons/database-username.svg - No such file or directory
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59548 Closing
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59556 Accepted
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59556 [404]: GET /public/assets/installation/assets/img/svg-icons/database-hostname.svg - No such file or directory
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59556 Closing
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59568 Accepted
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59580 Accepted
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59568 [404]: GET /public/assets/installation/assets/js/bootstrap.bundle.min.js - No such file or directory
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59568 Closing
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59580 [404]: GET /public/assets/installation/assets/js/script.js - No such file or directory
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59594 Accepted
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59580 Closing
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59610 Accepted
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59610 [404]: GET /public/assets/installation/assets/img/logo.svg - No such file or directory
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59610 Closing
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59594 [404]: GET /public/assets/installation/assets/img/page-bg.png - No such file or directory
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59594 Closing
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59618 Accepted
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59618 [404]: GET /public/assets/installation/assets/img/favicon.svg - No such file or directory
+[Sat Dec  2 02:44:40 2023] 197.55.43.227:59618 Closing
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34248 Accepted
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34248 [200]: GET /step1?token=%242y%2410%246H.hgW4ssx5EfZOcZSVGVOxWyB.8NQ.P9llwiqpL0jaRJUPqRRcRi
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34248 Closing
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34260 Accepted
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34264 Accepted
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34260 [404]: GET /public/assets/installation/assets/css/bootstrap.min.css - No such file or directory
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34260 Closing
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34264 [404]: GET /public/assets/installation/assets/css/style.css - No such file or directory
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34264 Closing
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34288 Accepted
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34274 Accepted
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34288 [404]: GET /public/assets/installation/assets/img/favicon.svg - No such file or directory
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34288 Closing
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34274 [404]: GET /public/assets/installation/assets/img/svg-icons/info.svg - No such file or directory
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34274 Closing
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34324 Accepted
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34310 Accepted
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34310 [404]: GET /public/assets/installation/assets/img/page-bg.png - No such file or directory
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34310 Closing
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34324 [404]: GET /public/assets/installation/assets/img/logo.svg - No such file or directory
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34324 Closing
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34316 Accepted
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34294 Accepted
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34316 [404]: GET /public/assets/installation/assets/img/svg-icons/route-service.svg - No such file or directory
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34316 Closing
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34326 Accepted
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34294 [404]: GET /public/assets/installation/assets/img/svg-icons/php-version.svg - No such file or directory
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34294 Closing
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34326 [404]: GET /public/assets/installation/assets/img/svg-icons/check.png - No such file or directory
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34326 Closing
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34328 Accepted
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34328 [404]: GET /public/assets/installation/assets/img/svg-icons/curl-enabled.svg - No such file or directory
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34328 Closing
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34344 Accepted
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34334 Accepted
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34344 [404]: GET /public/assets/installation/assets/js/bootstrap.bundle.min.js - No such file or directory
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34344 Closing
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34334 [404]: GET /public/assets/installation/assets/js/script.js - No such file or directory
+[Sat Dec  2 02:44:53 2023] 197.55.43.227:34334 Closing
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34358 Accepted
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34358 [200]: GET /step2?token=%242y%2410%24GjzyHZEyP35VXhp45%2FuLJuwjIaIGYdbSTiqGtNmdzmFiZju.OSS6S
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34358 Closing
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34374 Accepted
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34378 Accepted
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34374 [404]: GET /public/assets/installation/assets/css/bootstrap.min.css - No such file or directory
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34374 Closing
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34378 [404]: GET /public/assets/installation/assets/css/style.css - No such file or directory
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34378 Closing
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34394 Accepted
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34410 Accepted
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34394 [404]: GET /public/assets/installation/assets/img/favicon.svg - No such file or directory
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34394 Closing
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34410 [404]: GET /public/assets/installation/assets/img/svg-icons/info.svg - No such file or directory
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34410 Closing
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34448 Accepted
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34444 Accepted
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34430 Accepted
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34420 Accepted
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34444 [404]: GET /public/assets/installation/assets/img/page-bg.png - No such file or directory
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34444 Closing
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34448 [404]: GET /public/assets/installation/assets/img/svg-icons/info2.svg - No such file or directory
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34448 Closing
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34430 [404]: GET /public/assets/installation/assets/js/bootstrap.bundle.min.js - No such file or directory
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34430 Closing
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34420 [404]: GET /public/assets/installation/assets/img/logo.svg - No such file or directory
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34420 Closing
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34450 Accepted
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34450 [404]: GET /public/assets/installation/assets/js/script.js - No such file or directory
+[Sat Dec  2 02:44:57 2023] 197.55.43.227:34450 Closing
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34462 Accepted
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34462 [200]: GET /step2?token=%242y%2410%24GjzyHZEyP35VXhp45%2FuLJuwjIaIGYdbSTiqGtNmdzmFiZju.OSS6S
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34462 Closing
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34154 Accepted
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34158 Accepted
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34154 [404]: GET /public/assets/installation/assets/css/bootstrap.min.css - No such file or directory
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34154 Closing
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34158 [404]: GET /public/assets/installation/assets/css/style.css - No such file or directory
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34158 Closing
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34162 Accepted
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34178 Accepted
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34162 [404]: GET /public/assets/installation/assets/img/favicon.svg - No such file or directory
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34162 Closing
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34178 [404]: GET /public/assets/installation/assets/img/svg-icons/info.svg - No such file or directory
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34178 Closing
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34196 Accepted
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34216 Accepted
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34212 Accepted
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34196 [404]: GET /public/assets/installation/assets/img/page-bg.png - No such file or directory
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34196 Closing
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34212 [404]: GET /public/assets/installation/assets/img/svg-icons/info2.svg - No such file or directory
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34216 [404]: GET /public/assets/installation/assets/img/logo.svg - No such file or directory
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34212 Closing
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34216 Closing
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34180 Accepted
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34180 [404]: GET /public/assets/installation/assets/js/bootstrap.bundle.min.js - No such file or directory
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34180 Closing
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34226 Accepted
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34226 [404]: GET /public/assets/installation/assets/js/script.js - No such file or directory
+[Sat Dec  2 02:45:00 2023] 197.55.43.227:34226 Closing
+[Sat Dec  2 02:45:03 2023] 197.55.43.227:34238 Accepted
+[Sat Dec  2 02:45:03 2023] 197.55.43.227:34238 [200]: GET /
+[Sat Dec  2 02:45:03 2023] 197.55.43.227:34238 Closing
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34246 Accepted
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34244 Accepted
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34246 [404]: GET /public/assets/installation/assets/css/bootstrap.min.css - No such file or directory
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34246 Closing
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34244 [404]: GET /public/assets/installation/assets/css/style.css - No such file or directory
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34244 Closing
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34262 Accepted
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34262 [404]: GET /public/assets/installation/assets/img/favicon.svg - No such file or directory
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34262 Closing
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34272 Accepted
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34272 [404]: GET /public/assets/installation/assets/img/svg-icons/database-name.svg - No such file or directory
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34272 Closing
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34282 Accepted
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34290 Accepted
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34282 [404]: GET /public/assets/installation/assets/img/logo.svg - No such file or directory
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34290 [404]: GET /public/assets/installation/assets/img/page-bg.png - No such file or directory
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34282 Closing
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34290 Closing
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34304 Accepted
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34308 Accepted
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34310 Accepted
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34304 [404]: GET /public/assets/installation/assets/img/svg-icons/database-username.svg - No such file or directory
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34304 Closing
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34308 [404]: GET /public/assets/installation/assets/img/svg-icons/database-password.svg - No such file or directory
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34308 Closing
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34310 [404]: GET /public/assets/installation/assets/img/svg-icons/database-hostname.svg - No such file or directory
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34310 Closing
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34324 Accepted
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34324 [404]: GET /public/assets/installation/assets/js/bootstrap.bundle.min.js - No such file or directory
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34324 Closing
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34326 Accepted
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34326 [404]: GET /public/assets/installation/assets/js/script.js - No such file or directory
+[Sat Dec  2 02:45:04 2023] 197.55.43.227:34326 Closing
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59632 Accepted
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59632 [200]: GET /
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59632 Closing
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59642 Accepted
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59654 Accepted
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59654 [404]: GET /public/assets/installation/assets/css/bootstrap.min.css - No such file or directory
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59654 Closing
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59642 [404]: GET /public/assets/installation/assets/css/style.css - No such file or directory
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59642 Closing
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59678 Accepted
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59670 Accepted
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59678 [404]: GET /public/assets/installation/assets/img/favicon.svg - No such file or directory
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59678 Closing
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59670 [404]: GET /public/assets/installation/assets/img/svg-icons/database-name.svg - No such file or directory
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59670 Closing
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59716 Accepted
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59688 Accepted
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59722 Accepted
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59704 Accepted
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59688 [404]: GET /public/assets/installation/assets/img/logo.svg - No such file or directory
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59688 Closing
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59716 [404]: GET /public/assets/installation/assets/img/svg-icons/database-password.svg - No such file or directory
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59716 Closing
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59704 [404]: GET /public/assets/installation/assets/img/svg-icons/database-username.svg - No such file or directory
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59704 Closing
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59722 [404]: GET /public/assets/installation/assets/img/svg-icons/database-hostname.svg - No such file or directory
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59722 Closing
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59726 Accepted
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59738 Accepted
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59738 [404]: GET /public/assets/installation/assets/js/bootstrap.bundle.min.js - No such file or directory
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59738 Closing
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59726 [404]: GET /public/assets/installation/assets/js/script.js - No such file or directory
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59726 Closing
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59750 Accepted
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59750 [404]: GET /public/assets/installation/assets/img/page-bg.png - No such file or directory
+[Sat Dec  2 02:45:42 2023] 197.55.43.227:59750 Closing
+[Sat Dec  2 02:49:09 2023] 197.55.43.227:45386 Accepted
+[Sat Dec  2 02:49:09 2023] 197.55.43.227:45386 [200]: GET /
+[Sat Dec  2 02:49:09 2023] 197.55.43.227:45386 Closing
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45388 Accepted
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45398 Accepted
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45388 [404]: GET /public/assets/installation/assets/css/bootstrap.min.css - No such file or directory
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45388 Closing
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45398 [404]: GET /public/assets/installation/assets/css/style.css - No such file or directory
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45398 Closing
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45406 Accepted
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45420 Accepted
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45420 [404]: GET /public/assets/installation/assets/img/favicon.svg - No such file or directory
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45420 Closing
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45406 [404]: GET /public/assets/installation/assets/img/svg-icons/database-name.svg - No such file or directory
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45406 Closing
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45432 Accepted
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45430 Accepted
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45432 [404]: GET /public/assets/installation/assets/img/logo.svg - No such file or directory
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45432 Closing
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45430 [404]: GET /public/assets/installation/assets/img/page-bg.png - No such file or directory
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45430 Closing
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45446 Accepted
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45444 Accepted
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45446 [404]: GET /public/assets/installation/assets/img/svg-icons/database-password.svg - No such file or directory
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45446 Closing
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45444 [404]: GET /public/assets/installation/assets/img/svg-icons/database-username.svg - No such file or directory
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45444 Closing
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45462 Accepted
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45462 [404]: GET /public/assets/installation/assets/img/svg-icons/database-hostname.svg - No such file or directory
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45462 Closing
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45472 Accepted
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45472 [404]: GET /public/assets/installation/assets/js/bootstrap.bundle.min.js - No such file or directory
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45472 Closing
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45474 Accepted
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45474 [404]: GET /public/assets/installation/assets/js/script.js - No such file or directory
+[Sat Dec  2 02:49:10 2023] 197.55.43.227:45474 Closing
+[Sat Dec  2 02:50:28 2023] 167.248.133.39:36464 Accepted
+[Sat Dec  2 02:50:32 2023] 167.248.133.39:36464 Invalid request (Connection reset by peer)
+[Sat Dec  2 02:50:32 2023] 167.248.133.39:36464 Closing
+[Sat Dec  2 02:50:32 2023] 167.248.133.39:53052 Accepted
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48024 Accepted
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48024 [200]: GET /
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48024 Closing
+[Sat Dec  2 02:50:35 2023] 167.248.133.39:53052 [200]: GET /
+[Sat Dec  2 02:50:35 2023] 167.248.133.39:53052 Closing
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48028 Accepted
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48028 [404]: GET /public/assets/installation/assets/css/bootstrap.min.css - No such file or directory
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48028 Closing
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48044 Accepted
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48044 [404]: GET /public/assets/installation/assets/css/style.css - No such file or directory
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48044 Closing
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48056 Accepted
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48072 Accepted
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48072 [404]: GET /public/assets/installation/assets/img/favicon.svg - No such file or directory
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48072 Closing
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48056 [404]: GET /public/assets/installation/assets/img/svg-icons/database-name.svg - No such file or directory
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48056 Closing
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48110 Accepted
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48082 Accepted
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48082 [404]: GET /public/assets/installation/assets/img/page-bg.png - No such file or directory
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48082 Closing
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48110 [404]: GET /public/assets/installation/assets/img/logo.svg - No such file or directory
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48110 Closing
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48098 Accepted
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48102 Accepted
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48098 [404]: GET /public/assets/installation/assets/img/svg-icons/database-password.svg - No such file or directory
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48098 Closing
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48102 [404]: GET /public/assets/installation/assets/img/svg-icons/database-username.svg - No such file or directory
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48102 Closing
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48134 Accepted
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48126 Accepted
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48134 [404]: GET /public/assets/installation/assets/js/bootstrap.bundle.min.js - No such file or directory
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48134 Closing
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48126 [404]: GET /public/assets/installation/assets/img/svg-icons/database-hostname.svg - No such file or directory
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48126 Closing
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48140 Accepted
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48140 [404]: GET /public/assets/installation/assets/js/script.js - No such file or directory
+[Sat Dec  2 02:50:35 2023] 197.55.43.227:48140 Closing
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48150 Accepted
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48150 [200]: GET /
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48150 Closing
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48162 Accepted
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48162 [404]: GET /public/assets/installation/assets/css/bootstrap.min.css - No such file or directory
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48162 Closing
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48174 Accepted
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48178 Accepted
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48174 [404]: GET /public/assets/installation/assets/css/style.css - No such file or directory
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48174 Closing
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48178 [404]: GET /public/assets/installation/assets/img/favicon.svg - No such file or directory
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48178 Closing
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48154 Accepted
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48154 [404]: GET /public/assets/installation/assets/img/svg-icons/database-name.svg - No such file or directory
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48154 Closing
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48216 Accepted
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48208 Accepted
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48216 [404]: GET /public/assets/installation/assets/img/page-bg.png - No such file or directory
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48216 Closing
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48198 Accepted
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48208 [404]: GET /public/assets/installation/assets/img/logo.svg - No such file or directory
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48208 Closing
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48188 Accepted
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48198 [404]: GET /public/assets/installation/assets/img/svg-icons/database-password.svg - No such file or directory
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48198 Closing
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48222 Accepted
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48188 [404]: GET /public/assets/installation/assets/img/svg-icons/database-username.svg - No such file or directory
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48188 Closing
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48222 [404]: GET /public/assets/installation/assets/img/svg-icons/database-hostname.svg - No such file or directory
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48222 Closing
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48224 Accepted
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48224 [404]: GET /public/assets/installation/assets/js/bootstrap.bundle.min.js - No such file or directory
+[Sat Dec  2 02:50:36 2023] 197.55.43.227:48224 Closing
+[Sat Dec  2 02:50:37 2023] 197.55.43.227:48234 Accepted
+[Sat Dec  2 02:50:37 2023] 197.55.43.227:48234 [404]: GET /public/assets/installation/assets/js/script.js - No such file or directory
+[Sat Dec  2 02:50:37 2023] 197.55.43.227:48234 Closing
+[Sat Dec  2 02:50:38 2023] 167.248.133.39:43902 Accepted
+[Sat Dec  2 02:50:39 2023] 167.248.133.39:43902 [200]: GET /
+[Sat Dec  2 02:50:39 2023] 167.248.133.39:43902 Closing
+[Sat Dec  2 02:50:39 2023] 167.248.133.39:52944 Accepted
+[Sat Dec  2 02:50:39 2023] 167.248.133.39:52944 Invalid request (Malformed HTTP request)
+[Sat Dec  2 02:50:39 2023] 167.248.133.39:52944 Closing
+[Sat Dec  2 02:50:39 2023] 167.248.133.39:58950 Accepted
+[Sat Dec  2 02:50:39 2023] 167.248.133.39:58950 [404]: GET /public/assets/installation/assets/img/favicon.svg - No such file or directory
+[Sat Dec  2 02:50:39 2023] 167.248.133.39:58950 Closing
+[Sat Dec  2 02:50:39 2023] 167.248.133.39:50688 Accepted
+[Sat Dec  2 02:50:39 2023] 167.248.133.39:50688 [200]: GET /favicon.ico
+[Sat Dec  2 02:50:39 2023] 167.248.133.39:50688 Closing
+[Sat Dec  2 02:54:41 2023] PHP 8.1.2-1ubuntu2.14 Development Server (http://0.0.0.0:8080) started
+[Sat Dec  2 02:54:52 2023] 197.55.43.227:39642 Accepted
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39642 [200]: GET /
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39642 Closing
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39646 Accepted
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39644 Accepted
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39646 [200]: GET /public/assets/installation/assets/css/bootstrap.min.css
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39644 [200]: GET /public/assets/installation/assets/css/style.css
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39644 Closing
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39650 Accepted
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39650 [200]: GET /public/assets/installation/assets/img/favicon.svg
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39650 Closing
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39662 Accepted
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39662 [200]: GET /public/assets/installation/assets/img/svg-icons/database-name.svg
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39662 Closing
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39646 Closing
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39670 Accepted
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39670 [200]: GET /public/assets/installation/assets/img/svg-icons/database-password.svg
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39670 Closing
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39682 Accepted
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39682 [200]: GET /public/assets/installation/assets/img/svg-icons/database-username.svg
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39682 Closing
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39694 Accepted
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39694 [200]: GET /public/assets/installation/assets/img/svg-icons/database-hostname.svg
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39694 Closing
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39708 Accepted
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39708 [200]: GET /public/assets/installation/assets/js/bootstrap.bundle.min.js
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39720 Accepted
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39726 Accepted
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39720 [200]: GET /public/assets/installation/assets/js/script.js
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39720 Closing
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39726 [200]: GET /public/assets/installation/assets/img/logo.svg
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39726 Closing
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39736 Accepted
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39708 Closing
+[Sat Dec  2 02:54:53 2023] 197.55.43.227:39736 [200]: GET /public/assets/installation/assets/img/page-bg.png
+[Sat Dec  2 02:54:54 2023] 197.55.43.227:39736 Closing
+[Sat Dec  2 02:56:31 2023] PHP 8.1.2-1ubuntu2.14 Development Server (http://0.0.0.0:8080) started
+Error in argument 3, char 2: no argument for option t
+Usage: php [options] [-f] <file> [--] [args...]
+   php [options] -r <code> [--] [args...]
+   php [options] [-B <begin_code>] -R <code> [-E <end_code>] [--] [args...]
+   php [options] [-B <begin_code>] -F <file> [-E <end_code>] [--] [args...]
+   php [options] -S <addr>:<port> [-t docroot] [router]
+   php [options] -- [args...]
+   php [options] -a
+
+  -a               Run as interactive shell (requires readline extension)
+  -c <path>|<file> Look for php.ini file in this directory
+  -n               No configuration (ini) files will be used
+  -d foo[=bar]     Define INI entry foo with value 'bar'
+  -e               Generate extended information for debugger/profiler
+  -f <file>        Parse and execute <file>.
+  -h               This help
+  -i               PHP information
+  -l               Syntax check only (lint)
+  -m               Show compiled in modules
+  -r <code>        Run PHP <code> without using script tags <?..?>
+  -B <begin_code>  Run PHP <begin_code> before processing input lines
+  -R <code>        Run PHP <code> for every input line
+  -F <file>        Parse and execute <file> for every input line
+  -E <end_code>    Run PHP <end_code> after processing all input lines
+  -H               Hide any passed arguments from external tools.
+  -S <addr>:<port> Run with built-in web server.
+  -t <docroot>     Specify document root <docroot> for built-in web server.
+  -s               Output HTML syntax highlighted source.
+  -v               Version number
+  -w               Output source with stripped comments and whitespace.
+  -z <file>        Load Zend extension <file>.
+
+  args...          Arguments passed to script. Use -- args when first argument
+                   starts with - or script is read from stdin
+
+  --ini            Show configuration file names
+
+  --rf <name>      Show information about function <name>.
+  --rc <name>      Show information about class <name>.
+  --re <name>      Show information about extension <name>.
+  --rz <name>      Show information about Zend extension <name>.
+  --ri <name>      Show configuration for extension <name>.
+
+[Sat Dec  2 02:56:53 2023] PHP 8.1.2-1ubuntu2.14 Development Server (http://0.0.0.0:8080) started
+[Sat Dec  2 02:56:56 2023] 197.55.43.227:47710 Accepted
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47710 [200]: GET /
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47710 Closing
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47726 Accepted
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47742 Accepted
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47726 [200]: GET /public/assets/installation/assets/css/style.css
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47726 Closing
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47742 [200]: GET /public/assets/installation/assets/css/bootstrap.min.css
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47772 Accepted
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47758 Accepted
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47758 [200]: GET /public/assets/installation/assets/img/favicon.svg
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47758 Closing
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47772 [200]: GET /public/assets/installation/assets/img/svg-icons/database-name.svg
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47772 Closing
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47742 Closing
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47794 Accepted
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47784 Accepted
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47784 [200]: GET /public/assets/installation/assets/img/svg-icons/database-password.svg
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47784 Closing
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47794 [200]: GET /public/assets/installation/assets/img/svg-icons/database-username.svg
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47794 Closing
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47800 Accepted
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47800 [200]: GET /public/assets/installation/assets/img/svg-icons/database-hostname.svg
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47800 Closing
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47806 Accepted
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47806 [200]: GET /public/assets/installation/assets/js/bootstrap.bundle.min.js
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47806 Closing
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47822 Accepted
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47822 [200]: GET /public/assets/installation/assets/js/script.js
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47822 Closing
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47824 Accepted
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47808 Accepted
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47824 [200]: GET /public/assets/installation/assets/img/page-bg.png
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47808 [200]: GET /public/assets/installation/assets/img/logo.svg
+[Sat Dec  2 02:56:57 2023] 197.55.43.227:47808 Closing
+[Sat Dec  2 02:56:58 2023] 197.55.43.227:47824 Closing
+[Sat Dec  2 02:59:16 2023] Failed to listen on 0.0.0.0:8080 (reason: Address already in use)
+[Sat Dec  2 02:59:22 2023] Failed to listen on 0.0.0.0:8080 (reason: Address already in use)
+[Sat Dec  2 02:59:32 2023] Failed to listen on 0.0.0.0:8080 (reason: Address already in use)
+[Sat Dec  2 03:11:31 2023] PHP 8.1.2-1ubuntu2.14 Development Server (http://0.0.0.0:8000) started
+[Sat Dec  2 03:11:38 2023] 197.55.43.227:48220 Accepted
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48220 [200]: GET /
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48220 Closing
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48234 Accepted
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48240 Accepted
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48234 [200]: GET /public/assets/installation/assets/css/style.css
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48234 Closing
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48240 [200]: GET /public/assets/installation/assets/css/bootstrap.min.css
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48258 Accepted
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48258 [200]: GET /public/assets/installation/assets/img/favicon.svg
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48258 Closing
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48244 Accepted
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48244 [200]: GET /public/assets/installation/assets/img/svg-icons/database-name.svg
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48244 Closing
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48240 Closing
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48262 Accepted
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48262 [200]: GET /public/assets/installation/assets/img/svg-icons/database-password.svg
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48262 Closing
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48272 Accepted
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48272 [200]: GET /public/assets/installation/assets/img/svg-icons/database-username.svg
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48272 Closing
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48280 Accepted
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48280 [200]: GET /public/assets/installation/assets/img/svg-icons/database-hostname.svg
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48280 Closing
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48284 Accepted
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48284 [200]: GET /public/assets/installation/assets/js/bootstrap.bundle.min.js
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48298 Accepted
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48286 Accepted
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48298 [200]: GET /public/assets/installation/assets/js/script.js
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48298 Closing
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48286 [200]: GET /public/assets/installation/assets/img/logo.svg
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48286 Closing
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48284 Closing
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48300 Accepted
+[Sat Dec  2 03:11:39 2023] 197.55.43.227:48300 [200]: GET /public/assets/installation/assets/img/page-bg.png
+[Sat Dec  2 03:11:40 2023] 197.55.43.227:48300 Closing
+[Sat Dec  2 03:11:40 2023] 197.55.43.227:48304 Accepted
+[Sat Dec  2 03:11:40 2023] 197.55.43.227:48304 [200]: GET /public/assets/installation/assets/img/favicon.svg
+[Sat Dec  2 03:11:40 2023] 197.55.43.227:48304 Closing
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36944 Accepted
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36944 [200]: GET /
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36944 Closing
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36962 Accepted
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36954 Accepted
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36962 [200]: GET /public/assets/installation/assets/css/bootstrap.min.css
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36954 [200]: GET /public/assets/installation/assets/css/style.css
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36954 Closing
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36976 Accepted
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36968 Accepted
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36976 [200]: GET /public/assets/installation/assets/img/favicon.svg
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36976 Closing
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36968 [200]: GET /public/assets/installation/assets/img/svg-icons/database-name.svg
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36968 Closing
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36962 Closing
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36998 Accepted
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36984 Accepted
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36998 [200]: GET /public/assets/installation/assets/img/svg-icons/database-username.svg
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36998 Closing
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36984 [200]: GET /public/assets/installation/assets/img/svg-icons/database-password.svg
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:36984 Closing
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:37006 Accepted
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:37006 [200]: GET /public/assets/installation/assets/img/svg-icons/database-hostname.svg
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:37006 Closing
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:37020 Accepted
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:37020 [200]: GET /public/assets/installation/assets/js/bootstrap.bundle.min.js
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:37040 Accepted
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:37034 Accepted
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:37040 [200]: GET /public/assets/installation/assets/js/script.js
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:37040 Closing
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:37034 [200]: GET /public/assets/installation/assets/img/logo.svg
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:37034 Closing
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:37046 Accepted
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:37046 [200]: GET /public/assets/installation/assets/img/page-bg.png
+[Sat Dec  2 03:11:47 2023] 197.55.43.227:37020 Closing
+[Sat Dec  2 03:11:48 2023] 197.55.43.227:37046 Closing
+[Sat Dec  2 03:11:48 2023] 197.55.43.227:37054 Accepted
+[Sat Dec  2 03:11:48 2023] 197.55.43.227:37054 [200]: GET /public/assets/installation/assets/img/favicon.svg
+[Sat Dec  2 03:11:48 2023] 197.55.43.227:37054 Closing
+[Sat Dec  2 03:14:42 2023] 197.55.43.227:33054 Accepted
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33054 [200]: GET /step1?token=%242y%2410%243oFgQLw1EaQWj881vEYY.u.wM%2F2rq2VwZNCejIsYf6zy1mOb4S.Fu
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33054 Closing
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33064 Accepted
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33078 Accepted
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33078 [200]: GET /public/assets/installation/assets/css/bootstrap.min.css
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33064 [200]: GET /public/assets/installation/assets/css/style.css
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33064 Closing
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33088 Accepted
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33104 Accepted
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33088 [200]: GET /public/assets/installation/assets/img/favicon.svg
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33088 Closing
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33104 [200]: GET /public/assets/installation/assets/img/svg-icons/info.svg
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33104 Closing
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33078 Closing
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33110 Accepted
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33110 [200]: GET /public/assets/installation/assets/img/svg-icons/php-version.svg
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33110 Closing
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33124 Accepted
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33124 [200]: GET /public/assets/installation/assets/img/svg-icons/check.png
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33124 Closing
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33138 Accepted
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33138 [200]: GET /public/assets/installation/assets/img/svg-icons/curl-enabled.svg
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33138 Closing
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33148 Accepted
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33142 Accepted
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33148 [200]: GET /public/assets/installation/assets/js/script.js
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33142 [200]: GET /public/assets/installation/assets/js/bootstrap.bundle.min.js
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33148 Closing
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33168 Accepted
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33168 [200]: GET /public/assets/installation/assets/img/svg-icons/route-service.svg
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33168 Closing
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33164 Accepted
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33182 Accepted
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33164 [200]: GET /public/assets/installation/assets/img/logo.svg
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33164 Closing
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33182 [200]: GET /public/assets/installation/assets/img/page-bg.png
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33142 Closing
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33184 Accepted
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33184 [200]: GET /public/assets/installation/assets/img/svg-icons/info.svg
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33184 Closing
+[Sat Dec  2 03:14:43 2023] 197.55.43.227:33182 Closing
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43350 Accepted
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43350 [200]: GET /step1?token=%242y%2410%243oFgQLw1EaQWj881vEYY.u.wM%2F2rq2VwZNCejIsYf6zy1mOb4S.Fu
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43350 Closing
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43362 Accepted
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43378 Accepted
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43378 [200]: GET /public/assets/installation/assets/css/bootstrap.min.css
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43362 [200]: GET /public/assets/installation/assets/css/style.css
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43362 Closing
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43398 Accepted
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43398 [200]: GET /public/assets/installation/assets/img/favicon.svg
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43398 Closing
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43386 Accepted
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43386 [200]: GET /public/assets/installation/assets/img/svg-icons/info.svg
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43386 Closing
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43378 Closing
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43404 Accepted
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43404 [200]: GET /public/assets/installation/assets/img/svg-icons/php-version.svg
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43404 Closing
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43406 Accepted
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43406 [200]: GET /public/assets/installation/assets/img/svg-icons/check.png
+[Sat Dec  2 03:14:53 2023] 197.55.43.227:43406 Closing
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43420 Accepted
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43420 [200]: GET /public/assets/installation/assets/img/svg-icons/curl-enabled.svg
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43420 Closing
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43426 Accepted
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43426 [200]: GET /public/assets/installation/assets/js/bootstrap.bundle.min.js
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43426 Closing
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43448 Accepted
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43450 Accepted
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43432 Accepted
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43448 [200]: GET /public/assets/installation/assets/js/script.js
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43448 Closing
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43432 [200]: GET /public/assets/installation/assets/img/svg-icons/route-service.svg
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43432 Closing
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43450 [200]: GET /public/assets/installation/assets/img/logo.svg
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43450 Closing
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43456 Accepted
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43456 [200]: GET /public/assets/installation/assets/img/page-bg.png
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43468 Accepted
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43468 [200]: GET /public/assets/installation/assets/img/svg-icons/info.svg
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43468 Closing
+[Sat Dec  2 03:14:54 2023] 197.55.43.227:43456 Closing
+[Sat Dec  2 03:14:58 2023] 197.55.43.227:43476 Accepted
+[Sat Dec  2 03:14:58 2023] 197.55.43.227:43476 [200]: GET /step1?token=%242y%2410%243oFgQLw1EaQWj881vEYY.u.wM%2F2rq2VwZNCejIsYf6zy1mOb4S.Fu
+[Sat Dec  2 03:14:58 2023] 197.55.43.227:43476 Closing
+[Sat Dec  2 03:14:58 2023] 197.55.43.227:43488 Accepted
+[Sat Dec  2 03:14:58 2023] 197.55.43.227:43486 Accepted
+[Sat Dec  2 03:14:58 2023] 197.55.43.227:43488 [200]: GET /public/assets/installation/assets/css/bootstrap.min.css
+[Sat Dec  2 03:14:58 2023] 197.55.43.227:43486 [200]: GET /public/assets/installation/assets/css/style.css
+[Sat Dec  2 03:14:58 2023] 197.55.43.227:43486 Closing
+[Sat Dec  2 03:14:58 2023] 197.55.43.227:43514 Accepted
+[Sat Dec  2 03:14:58 2023] 197.55.43.227:43498 Accepted
+[Sat Dec  2 03:14:58 2023] 197.55.43.227:43514 [200]: GET /public/assets/installation/assets/img/favicon.svg
+[Sat Dec  2 03:14:58 2023] 197.55.43.227:43514 Closing
+[Sat Dec  2 03:14:58 2023] 197.55.43.227:43498 [200]: GET /public/assets/installation/assets/img/svg-icons/info.svg
+[Sat Dec  2 03:14:58 2023] 197.55.43.227:43498 Closing
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43488 Closing
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43530 Accepted
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43536 Accepted
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43530 [200]: GET /public/assets/installation/assets/img/svg-icons/php-version.svg
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43530 Closing
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43536 [200]: GET /public/assets/installation/assets/img/svg-icons/check.png
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43536 Closing
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43550 Accepted
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43550 [200]: GET /public/assets/installation/assets/img/svg-icons/curl-enabled.svg
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43550 Closing
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43564 Accepted
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43564 [200]: GET /public/assets/installation/assets/js/bootstrap.bundle.min.js
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43580 Accepted
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43580 [200]: GET /public/assets/installation/assets/js/script.js
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43580 Closing
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43592 Accepted
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43564 Closing
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43620 Accepted
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43592 [200]: GET /public/assets/installation/assets/img/svg-icons/route-service.svg
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43592 Closing
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43604 Accepted
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43620 [200]: GET /public/assets/installation/assets/img/logo.svg
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43620 Closing
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43604 [200]: GET /public/assets/installation/assets/img/page-bg.png
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43630 Accepted
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43630 [200]: GET /public/assets/installation/assets/img/svg-icons/info.svg
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43630 Closing
+[Sat Dec  2 03:14:59 2023] 197.55.43.227:43604 Closing
+[Sat Dec  2 03:17:47 2023] 64.62.197.82:35285 Accepted
+[Sat Dec  2 03:17:47 2023] 64.62.197.82:35285 [200]: GET /
+[Sat Dec  2 03:17:47 2023] 64.62.197.82:35285 Closing
+[Sat Dec  2 03:18:04 2023] 64.62.197.85:26981 Accepted
+[Sat Dec  2 03:18:04 2023] 64.62.197.85:26981 [404]: GET /favicon.ico - No such file or directory
+[Sat Dec  2 03:18:04 2023] 64.62.197.85:26981 Closing
+[Sat Dec  2 03:18:10 2023] 64.62.197.86:43621 Accepted
+[Sat Dec  2 03:18:10 2023] 64.62.197.86:43621 [200]: GET http://api.ipify.org/?format=json
+[Sat Dec  2 03:18:10 2023] 64.62.197.86:43621 Closing
+[Sat Dec  2 03:18:12 2023] 64.62.197.79:35163 Accepted
+[Sat Dec  2 03:18:13 2023] 64.62.197.79:35163 [405]: CONNECT www.shadowserver.org:443
+[Sat Dec  2 03:18:13 2023] 64.62.197.79:35163 Closing
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:56464 Accepted
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:56464 [200]: GET /
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:56464 Closing
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:56476 Accepted
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:56484 Accepted
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:56476 [200]: GET /public/assets/installation/assets/css/bootstrap.min.css
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:56484 [200]: GET /public/assets/installation/assets/css/style.css
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:56484 Closing
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:56488 Accepted
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:56488 [200]: GET /public/assets/installation/assets/img/favicon.svg
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:56494 Accepted
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:56488 Closing
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:56494 [200]: GET /public/assets/installation/assets/img/svg-icons/database-name.svg
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:56494 Closing
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:56476 Closing
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:57788 Accepted
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:57796 Accepted
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:57788 [200]: GET /public/assets/installation/assets/img/svg-icons/database-password.svg
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:57788 Closing
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:57796 [200]: GET /public/assets/installation/assets/img/svg-icons/database-username.svg
+[Sat Dec  2 03:18:50 2023] 197.55.43.227:57796 Closing
+[Sat Dec  2 03:18:51 2023] 197.55.43.227:57798 Accepted
+[Sat Dec  2 03:18:51 2023] 197.55.43.227:57800 Accepted
+[Sat Dec  2 03:18:51 2023] 197.55.43.227:57800 [200]: GET /public/assets/installation/assets/img/svg-icons/database-hostname.svg
+[Sat Dec  2 03:18:51 2023] 197.55.43.227:57798 [200]: GET /public/assets/installation/assets/js/bootstrap.bundle.min.js
+[Sat Dec  2 03:18:51 2023] 197.55.43.227:57800 Closing
+[Sat Dec  2 03:18:51 2023] 197.55.43.227:57804 Accepted
+[Sat Dec  2 03:18:51 2023] 197.55.43.227:57804 [200]: GET /public/assets/installation/assets/js/script.js
+[Sat Dec  2 03:18:51 2023] 197.55.43.227:57804 Closing
+[Sat Dec  2 03:18:51 2023] 197.55.43.227:57822 Accepted
+[Sat Dec  2 03:18:51 2023] 197.55.43.227:57806 Accepted
+[Sat Dec  2 03:18:51 2023] 197.55.43.227:57806 [200]: GET /public/assets/installation/assets/img/logo.svg
+[Sat Dec  2 03:18:51 2023] 197.55.43.227:57806 Closing
+[Sat Dec  2 03:18:51 2023] 197.55.43.227:57822 [200]: GET /public/assets/installation/assets/img/page-bg.png
+[Sat Dec  2 03:18:51 2023] 197.55.43.227:57798 Closing
+[Sat Dec  2 03:18:51 2023] 197.55.43.227:57822 Closing
+[Sat Dec  2 03:18:51 2023] 197.55.43.227:57838 Accepted
+[Sat Dec  2 03:18:51 2023] 197.55.43.227:57838 [200]: GET /public/assets/installation/assets/img/favicon.svg
+[Sat Dec  2 03:18:51 2023] 197.55.43.227:57838 Closing
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48250 Accepted
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48250 [200]: GET /step1?token=%242y%2410%24SLpoR8uLpdqr6rtkX7OCAepV6M9FQTb5%2FHSSiT2nWNTaYpnzCQxu2
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48250 Closing
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48264 Accepted
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48262 Accepted
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48262 [200]: GET /public/assets/installation/assets/css/bootstrap.min.css
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48264 [200]: GET /public/assets/installation/assets/css/style.css
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48264 Closing
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48276 Accepted
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48282 Accepted
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48276 [200]: GET /public/assets/installation/assets/img/favicon.svg
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48276 Closing
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48282 [200]: GET /public/assets/installation/assets/img/svg-icons/info.svg
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48282 Closing
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48262 Closing
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48284 Accepted
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48292 Accepted
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48284 [200]: GET /public/assets/installation/assets/img/svg-icons/check.png
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48284 Closing
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48292 [200]: GET /public/assets/installation/assets/img/svg-icons/php-version.svg
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48292 Closing
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48314 Accepted
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48300 Accepted
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48314 [200]: GET /public/assets/installation/assets/img/svg-icons/curl-enabled.svg
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48314 Closing
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48300 [200]: GET /public/assets/installation/assets/js/bootstrap.bundle.min.js
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48334 Accepted
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48326 Accepted
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48300 Closing
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48334 [200]: GET /public/assets/installation/assets/js/script.js
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48334 Closing
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48362 Accepted
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48326 [200]: GET /public/assets/installation/assets/img/svg-icons/route-service.svg
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48326 Closing
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48348 Accepted
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48362 [200]: GET /public/assets/installation/assets/img/logo.svg
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48362 Closing
+[Sat Dec  2 03:26:38 2023] 197.55.43.227:48348 [200]: GET /public/assets/installation/assets/img/page-bg.png
+[Sat Dec  2 03:26:39 2023] 197.55.43.227:48364 Accepted
+[Sat Dec  2 03:26:39 2023] 197.55.43.227:48364 [200]: GET /public/assets/installation/assets/img/svg-icons/info.svg
+[Sat Dec  2 03:26:39 2023] 197.55.43.227:48364 Closing
+[Sat Dec  2 03:26:39 2023] 197.55.43.227:48348 Closing
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53890 Accepted
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53890 [200]: GET /step2?token=%242y%2410%24cfOOViqt3JqhmcezXU0psOriJPXRVy40BdFBaLs4PCXvQKHTnmpKa
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53890 Closing
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53892 Accepted
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53894 Accepted
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53894 [200]: GET /public/assets/installation/assets/css/bootstrap.min.css
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53892 [200]: GET /public/assets/installation/assets/css/style.css
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53892 Closing
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53916 Accepted
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53908 Accepted
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53916 [200]: GET /public/assets/installation/assets/img/favicon.svg
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53916 Closing
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53908 [200]: GET /public/assets/installation/assets/img/svg-icons/info.svg
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53908 Closing
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53894 Closing
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53920 Accepted
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53920 [200]: GET /public/assets/installation/assets/img/svg-icons/info2.svg
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53920 Closing
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53934 Accepted
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53934 [200]: GET /public/assets/installation/assets/img/logo.svg
+[Sat Dec  2 03:26:42 2023] 197.55.43.227:53934 Closing
+[Sat Dec  2 03:26:43 2023] 197.55.43.227:53942 Accepted
+[Sat Dec  2 03:26:43 2023] 197.55.43.227:53942 [200]: GET /public/assets/installation/assets/js/bootstrap.bundle.min.js
+[Sat Dec  2 03:26:43 2023] 197.55.43.227:53942 Closing
+[Sat Dec  2 03:26:43 2023] 197.55.43.227:53958 Accepted
+[Sat Dec  2 03:26:43 2023] 197.55.43.227:53958 [200]: GET /public/assets/installation/assets/js/script.js
+[Sat Dec  2 03:26:43 2023] 197.55.43.227:53958 Closing
+[Sat Dec  2 03:26:43 2023] 197.55.43.227:53962 Accepted
+[Sat Dec  2 03:26:43 2023] 197.55.43.227:53962 [200]: GET /public/assets/installation/assets/img/page-bg.png
+[Sat Dec  2 03:26:43 2023] 197.55.43.227:53990 Accepted
+[Sat Dec  2 03:26:43 2023] 197.55.43.227:53978 Accepted
+[Sat Dec  2 03:26:43 2023] 197.55.43.227:53990 [200]: GET /public/assets/installation/assets/img/svg-icons/info.svg
+[Sat Dec  2 03:26:43 2023] 197.55.43.227:53990 Closing
+[Sat Dec  2 03:26:43 2023] 197.55.43.227:53978 [200]: GET /public/assets/installation/assets/img/svg-icons/info2.svg
+[Sat Dec  2 03:26:43 2023] 197.55.43.227:53978 Closing
+[Sat Dec  2 03:26:43 2023] 197.55.43.227:53962 Closing
+[Sat Dec  2 03:47:23 2023] 197.55.43.227:35980 Accepted
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:35980 [200]: GET /
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:35980 Closing
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:35996 Accepted
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:35990 Accepted
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:35990 [200]: GET /public/assets/installation/assets/css/bootstrap.min.css
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:35996 [200]: GET /public/assets/installation/assets/css/style.css
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:35996 Closing
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36004 Accepted
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36014 Accepted
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36004 [200]: GET /public/assets/installation/assets/img/svg-icons/database-name.svg
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36014 [200]: GET /public/assets/installation/assets/img/favicon.svg
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36004 Closing
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36014 Closing
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:35990 Closing
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36026 Accepted
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36024 Accepted
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36026 [200]: GET /public/assets/installation/assets/img/svg-icons/database-password.svg
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36026 Closing
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36024 [200]: GET /public/assets/installation/assets/img/svg-icons/database-username.svg
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36024 Closing
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36038 Accepted
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36034 Accepted
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36038 [200]: GET /public/assets/installation/assets/img/svg-icons/database-hostname.svg
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36038 Closing
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36034 [200]: GET /public/assets/installation/assets/js/bootstrap.bundle.min.js
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36034 Closing
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36064 Accepted
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36070 Accepted
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36054 Accepted
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36064 [200]: GET /public/assets/installation/assets/img/page-bg.png
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36054 [200]: GET /public/assets/installation/assets/js/script.js
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36054 Closing
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36070 [200]: GET /public/assets/installation/assets/img/logo.svg
+[Sat Dec  2 03:47:24 2023] 197.55.43.227:36070 Closing
+[Sat Dec  2 03:47:25 2023] 197.55.43.227:36064 Closing
+[Sat Dec  2 03:47:25 2023] 197.55.43.227:36078 Accepted
+[Sat Dec  2 03:47:25 2023] 197.55.43.227:36078 [200]: GET /public/assets/installation/assets/img/favicon.svg
+[Sat Dec  2 03:47:25 2023] 197.55.43.227:36078 Closing
+[Sat Dec  2 03:51:26 2023] 146.190.19.226:56160 Accepted
+[Sat Dec  2 03:51:26 2023] 146.190.19.226:56160 [302]: GET /api/v1/config
+[Sat Dec  2 03:51:26 2023] 146.190.19.226:56160 Closing
+[Sat Dec  2 03:51:26 2023] 146.190.19.226:42170 Accepted
+[Sat Dec  2 03:51:26 2023] 146.190.19.226:42176 Accepted
+[Sat Dec  2 03:51:26 2023] 146.190.19.226:42170 [200]: GET /
+[Sat Dec  2 03:51:26 2023] 146.190.19.226:42170 Closing
+[Sat Dec  2 03:51:31 2023] 146.190.19.226:42176 Closed without sending a request; it was probably just an unused speculative preconnection
+[Sat Dec  2 03:51:31 2023] 146.190.19.226:42176 Closing
+[Sat Dec  2 03:51:35 2023] 146.190.19.226:42182 Accepted
+[Sat Dec  2 03:51:35 2023] 146.190.19.226:42182 [302]: GET /api/v1/config
+[Sat Dec  2 03:51:35 2023] 146.190.19.226:42182 Closing
+[Sat Dec  2 03:51:35 2023] 146.190.19.226:42192 Accepted
+[Sat Dec  2 03:51:35 2023] 146.190.19.226:42202 Accepted
+[Sat Dec  2 03:51:35 2023] 146.190.19.226:42192 [200]: GET /
+[Sat Dec  2 03:51:35 2023] 146.190.19.226:42192 Closing
+[Sat Dec  2 03:51:36 2023] 146.190.19.226:42202 [302]: GET /api/v1/config
+[Sat Dec  2 03:51:36 2023] 146.190.19.226:42202 Closing
+[Sat Dec  2 03:51:36 2023] 146.190.19.226:39734 Accepted
+[Sat Dec  2 03:51:36 2023] 146.190.19.226:39738 Accepted
+[Sat Dec  2 03:51:36 2023] 146.190.19.226:39734 [200]: GET /
+[Sat Dec  2 03:51:36 2023] 146.190.19.226:39734 Closing
+[Sat Dec  2 03:51:40 2023] 146.190.19.226:39738 [302]: GET /api/v1/config
+[Sat Dec  2 03:51:40 2023] 146.190.19.226:39738 Closing
+[Sat Dec  2 03:51:40 2023] 146.190.19.226:39746 Accepted
+[Sat Dec  2 03:51:40 2023] 146.190.19.226:39760 Accepted
+[Sat Dec  2 03:51:40 2023] 146.190.19.226:39746 [200]: GET /
+[Sat Dec  2 03:51:40 2023] 146.190.19.226:39746 Closing
+[Sat Dec  2 03:51:41 2023] 146.190.19.226:39760 [302]: GET /api/v1/config
+[Sat Dec  2 03:51:41 2023] 146.190.19.226:39760 Closing
+[Sat Dec  2 03:51:41 2023] 146.190.19.226:39766 Accepted
+[Sat Dec  2 03:51:41 2023] 146.190.19.226:39774 Accepted
+[Sat Dec  2 03:51:41 2023] 146.190.19.226:39766 [200]: GET /
+[Sat Dec  2 03:51:41 2023] 146.190.19.226:39766 Closing
+[Sat Dec  2 03:51:45 2023] 146.190.19.226:39774 Closed without sending a request; it was probably just an unused speculative preconnection
+[Sat Dec  2 03:51:45 2023] 146.190.19.226:39774 Closing
+[Sat Dec  2 03:53:09 2023] 146.190.19.226:39418 Accepted
+[Sat Dec  2 03:53:09 2023] 146.190.19.226:39418 [302]: GET /api/v1/config
+[Sat Dec  2 03:53:09 2023] 146.190.19.226:39418 Closing
+[Sat Dec  2 03:53:09 2023] 146.190.19.226:39430 Accepted
+[Sat Dec  2 03:53:09 2023] 146.190.19.226:39432 Accepted
+[Sat Dec  2 03:53:09 2023] 146.190.19.226:39430 [200]: GET /
+[Sat Dec  2 03:53:09 2023] 146.190.19.226:39430 Closing
+[Sat Dec  2 03:53:14 2023] 146.190.19.226:39432 Closed without sending a request; it was probably just an unused speculative preconnection
+[Sat Dec  2 03:53:14 2023] 146.190.19.226:39432 Closing
