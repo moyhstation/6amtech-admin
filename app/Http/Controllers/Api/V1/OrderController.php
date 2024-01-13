@@ -36,6 +36,7 @@ use App\Models\OfflinePaymentMethod;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use MatanYadaev\EloquentSpatial\Objects\Point;
+use Illuminate\Support\Facades\Http;
 
 class OrderController extends Controller
 {
@@ -848,6 +849,21 @@ class OrderController extends Controller
                 info($ex->getMessage());
             }
             //PlaceOrderMail end
+            // TODO: send order to https://hook.eu2.make.com/yiflyjohi9xisysxbve4axs7ldd79a6t POST
+
+            // firist print "IAM KIROO HEEERRREEEE" in like console log 
+            info("IAM KIROO HEEERRREEEE");
+
+            // Send a POST request to the specified URL
+            $response = Http::post('https://hook.eu2.make.com/yiflyjohi9xisysxbve4axs7ldd79a6t', $order);
+
+            // Check if the request was successful (status code 2xx)
+            if ($response->successful()) {
+                info('POST request successful');
+            } else {
+                info('POST request failed. Status code: ' . $response->status());
+            }
+
             return response()->json([
                 'message' => translate('messages.order_placed_successfully'),
                 'order_id' => $order->id,
