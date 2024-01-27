@@ -89,23 +89,30 @@ trait  SmsGateway
 
     public static function twilio($receiver, $otp): string
     {
+        info($receiver);
+        info($otp);
+        info('SmsGateway::::::ourSMS::::::::::::::start');
         $config = self::get_settings('twilio');
         $response = 'error';
         if (isset($config) && $config['status'] == 1) {
             $message = str_replace("#OTP#", $otp, $config['otp_template']);
             $sid = $config['sid'];
             $token = $config['token'];
+            $apiUrl = "https://api.oursms.com/msgs/sms";
             try {
-                $twilio = new Client($sid, $token);
-                $twilio->messages
-                    ->create($receiver, // to
-                        array(
-                            "messagingServiceSid" => $config['messaging_service_sid'],
-                            "body" => $message
-                        )
-                    );
-                $response = 'success';
-            } catch (\Exception $exception) {
+                $data = Http::withHeaders([
+                    'Authorization' => 'Bearer ' . $token,
+                    'Content-Type' => 'application/json',
+                    ])->post($apiUrl, [
+                        'src' => "oursms",
+                        'body' => $message,
+                        'dests' => [$receiver],
+                    ]);
+            info('SmsGateway::::::ourSMS::::::::::::::end');
+            info($data);
+            $response = 'success';
+        } catch (\Exception $exception) {
+                info('SmsGateway::::::ourSMS::::::::::::::error');
                 $response = 'error';
             }
         }

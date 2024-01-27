@@ -35,9 +35,9 @@ class SMSModuleController extends Controller
                 $additional_data = [
                     'status' => $request['status'],
                     'sid' => $request['sid'],
-                    'messaging_service_sid' => $request['messaging_service_sid'],
+                    // 'messaging_service_sid' => $request['messaging_service_sid'],
                     'token' => $request['token'],
-                    'from' => $request['from'],
+                    // 'from' => $request['from'],
                     'otp_template' => $request['otp_template'],
                 ];
 
