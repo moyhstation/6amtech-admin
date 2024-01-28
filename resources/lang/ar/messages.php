@@ -3589,4 +3589,6 @@
   'Ok  let me check' => 'حسنا، دعني اتأكد!',
   'failed_to_send_sms' => 'Failed to send sms',
   'otp_sent_successfull' => 'Otp sent successfull',
+  'موية ستيشن' => 'موية ستيشن',
+  'order_canceled_successfully' => 'Order canceled successfully',
 );
