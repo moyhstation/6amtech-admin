@@ -1,0 +1,7 @@
+ps aux | grep "php -S 0.0.0.0:8000"
+
+kill -9 PID
+
+nohup php -S 0.0.0.0:8000 > server.log 2>&1 &
+
+tail -f storage/logs/laravel.log
