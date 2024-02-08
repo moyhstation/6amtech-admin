@@ -853,9 +853,114 @@ class OrderController extends Controller
 
             // firist print "IAM KIROO HEEERRREEEE" in like console log 
             info("IAM KIROO HEEERRREEEE");
+            
+            // find all this order items  using get_order_details
+            $orderDetails = OrderDetail::where('order_id', $order->id)->get();
+            $details = Helpers::order_details_data_formatting($orderDetails);
 
+            // create customer data if user or guest
+            $customerData = [];
+
+
+            if($request->user){
+                $customerData = [
+                    'is_guest' => false,
+                    'id' => $request->user->id,
+                    'name' => $request->user->f_name . ' ' . $request->user->l_name,
+                    'email' => $request->user->email,
+                    'phone' => $request->user->phone,
+                    'address' => $request->address,
+                    'latitude' => $request->latitude,
+                    'longitude' => $request->longitude,
+                    'floor' => $request->floor,
+                    'road' => $request->road,
+                    'house' => $request->house,
+                ];
+            }else{
+                $customerData = [
+                    'is_guest' => true,
+                    'id' => $request->guest_id,
+                    'name' => $request->contact_person_name,
+                    'email' => $request->contact_person_email,
+                    'phone' => $request->contact_person_number,
+                    'address' => $request->address,
+                    'latitude' => $request->latitude,
+                    'longitude' => $request->longitude,
+                    'floor' => $request->floor,
+                    'road' => $request->road,
+                    'house' => $request->house,
+                ];
+            }
+
+            // Payment data
+            $paymentData = [
+                'payment_method' => $order->payment_method ?? null,
+                'payment_status' => $order->payment_status ?? null,
+                'transaction_reference' => $order->transaction_reference ?? null,
+                'partially_paid_amount' => $order->partially_paid_amount ?? null,
+                'coupon_code' => $order->coupon_code ?? null,
+                'coupon_discount_amount' => $order->coupon_discount_amount ?? null,
+                'coupon_discount_title' => $order->coupon_discount_title ?? null,
+                'store_discount_amount' => $order->store_discount_amount ?? null,
+                'tax_percentage' => $order->tax_percentage ?? null,
+                'total_tax_amount' => $order->total_tax_amount ?? null,
+                'delivery_charge' => $order->delivery_charge ?? null,
+                'original_delivery_charge' => $order->original_delivery_charge ?? null,
+                'flash_admin_discount_amount' => $order->flash_admin_discount_amount ?? null,
+                'flash_store_discount_amount' => $order->flash_store_discount_amount ?? null,
+                'additional_charge' => $order->additional_charge ?? null,
+                'dm_tips' => $order->dm_tips ?? null,
+            ];
+
+            info($paymentData);
+
+            // importat data in order all this order-> data
+            $orderSideData = [
+                'order_amount' => $order->order_amount ?? null,
+                'delivery_charge' => $order->delivery_charge ?? null,
+                'original_delivery_charge' => $order->original_delivery_charge ?? null,
+                'schedule_at' => $order->schedule_at ?? null,
+                'scheduled' => $order->scheduled ?? null,
+                'cutlery' => $order->cutlery ?? null,
+                'otp' => $order->otp ?? null,
+                'zone_id' => $order->zone_id ?? null,
+                'module_id' => $order->module_id ?? null,
+                'parcel_category_id' => $order->parcel_category_id ?? null,
+                'receiver_details' => $order->receiver_details ?? null,
+                'dm_vehicle_id' => $order->dm_vehicle_id ?? null,
+                'pending' => $order->pending ?? null,
+                'order_attachment' => $order->order_attachment ?? null,
+                'distance' => $order->distance ?? null,
+            ];
+
+            // 'order' => $order,
+            $dataToWebhook = [
+                'order_id' => $order->id,
+                'order_details' => $details,
+                'customer' => $customerData,
+                'vendor' => [
+                    'id' => $store->id,
+                    'name' => $store->name,
+                    'email' => $store->email,
+                    'phone' => $store->phone,
+                    'address' => $store->address,
+                    'latitude' => $store->latitude,
+                    'longitude' => $store->longitude,
+                ],
+                'payment' => $paymentData,
+                'order_data' => $orderSideData,
+                'request' => json_encode($request->all()),
+            ];
+
+            info($dataToWebhook);
+            
             // Send a POST request to the specified URL
-            $response = Http::post('https://hook.eu2.make.com/yiflyjohi9xisysxbve4axs7ldd79a6t', $order);
+            // $response = Http::post('https://hook.eu2.make.com/yiflyjohi9xisysxbve4axs7ldd79a6t', $order);
+            
+            // make this $dataToWebhook to json
+            // $dataToWebhook = json_encode($dataToWebhook);
+            // info($dataToWebhook);
+            $response = Http::post('https://hook.eu2.make.com/t713gne1rlt90uofm0eszt77kj6fhs89', $dataToWebhook);
 
             // Check if the request was successful (status code 2xx)
             if ($response->successful()) {
@@ -880,6 +985,7 @@ class OrderController extends Controller
             ]
         ], 403);
     }
+
     public function prescription_place_order(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -1306,7 +1412,6 @@ class OrderController extends Controller
         return response()->json($data, 200);
     }
 
-
     public function get_running_orders(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -1725,8 +1830,6 @@ class OrderController extends Controller
 
         return response()->json([ 'payment' => 'Payment_Info_Updated_successfully' ], 200);
     }
-
-
 
     public function order_again(Request $request){
         if (!$request->hasHeader('zoneId')) {

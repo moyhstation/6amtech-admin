@@ -3631,4 +3631,23 @@
   'seller_links_updated' => 'Seller links updated',
   'delivery_man_links_updated' => 'Delivery man links updated',
   'employee_added_successfully' => 'Employee added successfully',
+  'zone_cash_on_delivery_status_updated' => 'Zone cash on delivery status updated',
+  'store_featured_status_updated' => 'Store featured status updated',
+  'schedule_overlapping_warning' => 'Schedule overlapping warning',
+  'admin_earned' => 'Admin earned',
+  'store_earned' => 'Store earned',
+  'total_order_amount' => 'Total order amount',
+  'This value is the miximum distance for a vehicle in this category to serve an order.
+                                            ' => 'This value is the miximum distance for a vehicle in this category to serve an order.
+                                            ',
+  'Change status to pending' => 'Change status to pending',
+  'رقم_الطلب:' => 'رقم الطلب:',
+  'Proceed _If_thermal_printer_is_ready.' => 'Proceed  If thermal printer is ready.',
+  'اسم_صاحب_الحساب:' => 'اسم صاحب الحساب:',
+  'Selected Address' => 'Selected Address',
+  'addresses' => 'Addresses',
+  'HOME' => 'HOME',
+  'order_canceled_successfully' => 'Order canceled successfully',
+  'category_updated_successfully' => 'Category updated successfully',
+  'office' => 'Office',
 );

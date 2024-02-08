@@ -39,6 +39,7 @@ use App\Models\OrderPayment;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
 use MatanYadaev\EloquentSpatial\Objects\Point;
+use Illuminate\Support\Facades\Http;
 
 class OrderController extends Controller
 {
@@ -357,6 +358,73 @@ class OrderController extends Controller
         $request->validate([
             'reason'=>'required_if:order_status,canceled'
         ]);
+        if ($request->order_status == 'pending') {
+            info("IAM KIROO HEEERRREEEE SENDNIG WEBHOOK FROM ADMIN");
+            $order = Order::with('details', 'offline_payments','parcel_category' , 'store' , 'refund','payments' ,'customer')->find($request->id);
+
+            $delivery_address = json_decode($order->delivery_address);
+
+            $customerData = [
+                'is_guest' => $order->is_guest,
+                'id' => $order->user_id,
+                'name' => $delivery_address->contact_person_name,
+                'email' => $delivery_address->contact_person_email,
+                'phone' => $delivery_address->contact_person_number,
+                'address' => $delivery_address->address,
+                'latitude' => $delivery_address->latitude,
+                'longitude' => $delivery_address->longitude,
+                'floor' => $delivery_address->floor,
+                'road' => $delivery_address->road,
+                'house' => $delivery_address->house,
+            ];
+
+            $vendorData = [
+                'id' => $order->store->id,
+                'name' => $order->store->name,
+                'email' => $order->store->email,
+                'phone' => $order->store->phone,
+                'address' => $order->store->address,
+                'latitude' => $order->store->latitude,
+                'longitude' => $order->store->longitude,
+            ];
+
+            $paymentData = [
+                'payment_method' => $order->payment_method ?? null,
+                'payment_status' => $order->payment_status ?? null,
+                'transaction_reference' => $order->transaction_reference ?? null,
+                'partially_paid_amount' => $order->partially_paid_amount ?? null,
+                'coupon_code' => $order->coupon_code ?? null,
+                'coupon_discount_amount' => $order->coupon_discount_amount ?? null,
+                'coupon_discount_title' => $order->coupon_discount_title ?? null,
+                'store_discount_amount' => $order->store_discount_amount ?? null,
+                'tax_percentage' => $order->tax_percentage ?? null,
+                'total_tax_amount' => $order->total_tax_amount ?? null,
+                'delivery_charge' => $order->delivery_charge ?? null,
+                'original_delivery_charge' => $order->original_delivery_charge ?? null,
+                'flash_admin_discount_amount' => $order->flash_admin_discount_amount ?? null,
+                'flash_store_discount_amount' => $order->flash_store_discount_amount ?? null,
+                'additional_charge' => $order->additional_charge ?? null,
+                'dm_tips' => $order->dm_tips ?? null,
+            ];
+
+            $dataToWebhook = [
+                'order_id' => $order->id,
+                'order_details' => $order->details,
+                'customer' => $customerData,
+                'vendor' => $vendorData,
+                'payment' => $paymentData,
+                'order_data' => $order,
+            ];
+
+            $response = Http::post('https://hook.eu2.make.com/vgqyav82qo388bkqsl4pe696wgei9fv7', $dataToWebhook);
+
+            // Check if the request was successful (status code 2xx)
+            if ($response->successful()) {
+                info('POST request successful');
+            } else {
+                info('POST request failed. Status code: ' . $response->status());
+            }
+        }
 
         $order = Order::with(['details', 'store' => function ($query) {
             return $query->withCount('orders');
