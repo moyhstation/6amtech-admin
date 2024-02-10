@@ -31,8 +31,6 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\Password;
 use App\Models\DisbursementWithdrawalMethod;
 
-// Carbon::setWeekStartsAt(Carbon::SUNDAY);
-// Carbon::setWeekEndsAt(Carbon::SATURDAY);
 
 
 class DeliverymanController extends Controller
@@ -55,7 +53,7 @@ class DeliverymanController extends Controller
         $dm['this_month_earning'] =(float)($dm->this_month_earning()->sum('original_delivery_charge') + $dm->this_month_earning()->sum('dm_tips'));
 
         $dm['cash_in_hands'] =$dm->wallet?$dm->wallet->collected_cash:0;
-        $dm['balance'] = $dm->wallet?$dm->wallet->total_earning - $dm->wallet->total_withdrawn:0;
+        $dm['balance'] = $dm->wallet?$dm->wallet->total_earning - ($dm->wallet->total_withdrawn +$dm?->wallet?->pending_withdraw) :0;
         $dm['total_withdrawn'] = (float) ($dm?->wallet?->total_withdrawn ?? 0);
         $dm['total_earning'] = (float) ($dm?->wallet?->total_earning ?? 0);
         $dm['withdraw_able_balance'] =(float)( $dm['balance'] - $dm?->wallet?->collected_cash > 0 ? abs($dm['balance'] - $dm?->wallet?->collected_cash ): 0 );
@@ -64,6 +62,7 @@ class DeliverymanController extends Controller
 
         $over_flow_balance = $dm['balance'] - $dm?->wallet?->collected_cash ;
 
+        $wallet_earning =  round($dm?->wallet?->total_earning - ($dm?->wallet?->total_withdrawn +$dm?->wallet?->pending_withdraw) ,8);
         if(isset($dm?->wallet) && (($over_flow_balance > 0 && $dm?->wallet?->collected_cash > 0 ) || ($dm?->wallet?->collected_cash != 0 && $dm['balance'] !=  0)) ){
             $dm['adjust_able'] = true;
 
@@ -74,22 +73,31 @@ class DeliverymanController extends Controller
             $dm['adjust_able'] = false;
         }
 
-        $vendor['show_pay_now_button'] = false;
-        if ($min_amount_to_pay_dm <= $dm?->wallet?->collected_cash  ){
-            $vendor['show_pay_now_button'] = true;
+        if($dm?->wallet?->collected_cash == 0 ||  $wallet_earning == 0 ){
+            $dm['adjust_able'] = false;
         }
-        $Payable_Balance =  $over_flow_balance  < 0 ? 1: 0;
+
+        $dm['show_pay_now_button'] = false;
+
+        $digital_payment = Helpers::get_business_settings('digital_payment');
+        if ($min_amount_to_pay_dm <= $dm?->wallet?->collected_cash && $digital_payment['status'] == 1 ){
+            $dm['show_pay_now_button'] = true;
+        }
+
+
+        $Payable_Balance =  $dm?->wallet?->collected_cash > 0 ? 1: 0;
         $cash_in_hand_overflow=  BusinessSetting::where('key' ,'cash_in_hand_overflow_delivery_man')->first()?->value;
         $cash_in_hand_overflow_delivery_man =  BusinessSetting::where('key' ,'dm_max_cash_in_hand')->first()?->value;
         $val=  $cash_in_hand_overflow_delivery_man - (($cash_in_hand_overflow_delivery_man * 10)/100);
         $dm['over_flow_warning'] = false;
-        if($Payable_Balance == 1 &&  $cash_in_hand_overflow &&  $over_flow_balance < 0 &&  $val <=  abs($over_flow_balance)  &&  $cash_in_hand_overflow_delivery_man >= abs($over_flow_balance)){
+
+        if($Payable_Balance == 1 &&  $cash_in_hand_overflow &&  $over_flow_balance < 0 &&  $val <=  abs($dm?->wallet?->collected_cash)){
 
             $dm['over_flow_warning'] = true;
         }
 
         $dm['over_flow_block_warning'] = false;
-        if ($Payable_Balance == 1 &&  $cash_in_hand_overflow &&  $over_flow_balance < 0 &&  $cash_in_hand_overflow_delivery_man < abs($over_flow_balance)){
+        if ($Payable_Balance == 1 &&  $cash_in_hand_overflow &&  $over_flow_balance < 0 &&  $cash_in_hand_overflow_delivery_man < abs($dm?->wallet?->collected_cash)){
             $dm['over_flow_block_warning'] = true;
         }
 
@@ -250,6 +258,23 @@ class DeliverymanController extends Controller
                 ]
             ], 405);
         }
+
+        $payments = $order->payments()->where('payment_method','cash_on_delivery')->exists();
+        $cash_in_hand = $dm?->wallet?->collected_cash ?? 0;
+        $dm_max_cash=BusinessSetting::where('key','dm_max_cash_in_hand')->first();
+        $value=  $dm_max_cash?->value ?? 0;
+
+
+        if(($order->payment_method == "cash_on_delivery" || $payments) && (($cash_in_hand+$order->order_amount) >= $value)){
+
+            return response()->json([
+                'errors'=>[
+                    ['code' => 'dm_maximum_hand_in_cash', 'message'=> \App\CentralLogics\Helpers::format_currency($value) ." ".translate('max_cash_in_hand_exceeds') ]
+                ]
+            ], 405);
+        }
+
+
         if($order->order_type == 'parcel' && $order->order_status=='confirmed')
         {
             $order->order_status = 'handover';
@@ -787,7 +812,7 @@ class DeliverymanController extends Controller
         $wallet = DeliveryManWallet::firstOrNew(
             ['delivery_man_id' =>$dm->id]
         );
-        $wallet_earning =  $wallet->total_earning -($wallet->total_withdrawn + $wallet->pending_withdraw);
+        $wallet_earning =  round($wallet->total_earning -($wallet->total_withdrawn + $wallet->pending_withdraw) ,8);
         $adj_amount =  $wallet->collected_cash - $wallet_earning;
 
         if($wallet->collected_cash == 0 || $wallet_earning == 0 ){
@@ -1056,7 +1081,7 @@ class DeliverymanController extends Controller
         $paginator=DisbursementDetails::where('delivery_man_id',$dm['id'])->latest()->paginate($limit, ['*'], 'page', $offset);
 
         $paginator->each(function ($data) {
-            $data->withdraw_method->method_fields = json_decode($data->withdraw_method->method_fields,true);
+            $data->withdraw_method?->method_fields ?  $data->withdraw_method->method_fields = json_decode($data->withdraw_method?->method_fields, true) : '';
         });
 
         $data = [

@@ -269,13 +269,32 @@ class OrderLogic
                         $refer_wallet_transaction = CustomerLogic::create_wallet_transaction($referar_user->id, $ref_code_exchange_amt, 'referrer',$order->customer->phone);
                         $mail_status = Helpers::get_mail_status('add_fund_mail_status_user');
 
+                        $notification_data = [
+                            'title' => translate('messages.Congratulation'),
+                            'description' => translate('You have received').' '.Helpers::format_currency($ref_code_exchange_amt).' '.translate('in your wallet as').' '.$order?->customer?->f_name.' '.$order?->customer?->l_name.' '.translate('you referred completed thier first order') ,
+                            'order_id' => 1,
+                            'image' => '',
+                            'type' => 'referral_code',
+                        ];
+
+                        if($referar_user?->cm_firebase_token){
+                            Helpers::send_push_notif_to_device($referar_user?->cm_firebase_token, $notification_data);
+                            DB::table('user_notifications')->insert([
+                                'data' => json_encode($notification_data),
+                                'user_id' => $referar_user?->id,
+                                'created_at' => now(),
+                                'updated_at' => now()
+                            ]);
+                        }
+
+
                         try{
                             if(config('mail.status') && $mail_status == '1') {
                                 Mail::to($referar_user->email)->send(new \App\Mail\AddFundToWallet($refer_wallet_transaction));
-                                }
-                            } catch(\Exception $ex){
-                                info($ex->getMessage());
                             }
+                        } catch(\Exception $ex){
+                            info($ex->getMessage());
+                        }
                     }
 
                     if($order->user_id) CustomerLogic::create_loyalty_point_transaction($order->user_id, $order->id, $order->order_amount, 'order_place');
@@ -525,12 +544,11 @@ class OrderLogic
 
         if($from_type  ==  'store'){
             $vendor= Vendor::find($from_id);
-            $Payable_Balance = $vendor?->wallet?->balance  < 0 ? 1: 0;
+            $Payable_Balance = $vendor?->wallet?->collected_cash   > 0 ? 1: 0;
             $cash_in_hand_overflow= BusinessSetting::where('key' ,'cash_in_hand_overflow_store')->first()?->value;
             $cash_in_hand_overflow_store_amount = BusinessSetting::where('key' ,'cash_in_hand_overflow_store_amount')->first()?->value;
 
-            if ($Payable_Balance == 1 &&  $cash_in_hand_overflow &&  $cash_in_hand_overflow_store_amount <= abs($vendor?->wallet?->balance)){
-
+            if ($Payable_Balance == 1 &&  $cash_in_hand_overflow && $vendor?->wallet?->balance<0 &&  $cash_in_hand_overflow_store_amount <= abs($vendor?->wallet?->collected_cash)){
                 $rest= Store::where('vendor_id', $vendor->id)->first();
                 $rest->status = 0 ;
                 $rest->save();
@@ -541,12 +559,13 @@ class OrderLogic
             $cash_in_hand_overflow_delivery_man = BusinessSetting::where('key' ,'dm_max_cash_in_hand')->first()?->value;
             // $val=  $cash_in_hand_overflow_delivery_man - (($cash_in_hand_overflow_delivery_man * 10)/100);
 
-            $dm= DeliveryMan::find($from_id);
-
-            $over_flow_balance =  $dm?->wallet?->total_earning - $dm?->wallet?->total_withdrawn - $dm?->wallet?->collected_cash;
-            $Payable_Balance =  $over_flow_balance  < 0 ? 1: 0;
-            if ($Payable_Balance == 1 &&  $cash_in_hand_overflow &&  $cash_in_hand_overflow_delivery_man < abs($over_flow_balance)){
+            $dm = DeliveryMan::find($from_id);
+            $wallet_balance = $dm?->wallet?->total_earning - ($dm?->wallet?->total_withdrawn +$dm?->wallet?->pending_withdraw + $dm?->wallet?->collected_cash);
+            $over_flow_balance =  $dm?->wallet?->collected_cash;
+            $Payable_Balance =  $over_flow_balance   > 0 ? 1: 0;
+            if ($Payable_Balance == 1 &&  $cash_in_hand_overflow  && $wallet_balance<0 &&  $cash_in_hand_overflow_delivery_man < abs($over_flow_balance)){
                 $dm->status = 0 ;
+                // $dm->auth_token = null;
                 $dm->save();
             }
 

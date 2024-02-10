@@ -14,23 +14,23 @@
                 <span class="page-header-icon">
                     <img src="{{asset('public/assets/admin/img/delivery-man.png')}}" class="w--26" alt="">
                 </span>
-                <span>{{$dm['f_name'].' '.$dm['l_name']}}</span>
+                <span>{{$deliveryMan['f_name'].' '.$deliveryMan['l_name']}}</span>
             </h1>
             <div class="row">
                 <div class="js-nav-scroller hs-nav-scroller-horizontal mt-2">
                     <!-- Nav -->
                     <ul class="nav nav-tabs nav--tabs border-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('admin.users.delivery-man.preview', ['id'=>$dm->id, 'tab'=> 'info'])}}"  aria-disabled="true">{{translate('messages.info')}}</a>
+                            <a class="nav-link" href="{{route('admin.users.delivery-man.preview', ['id'=>$deliveryMan->id, 'tab'=> 'info'])}}"  aria-disabled="true">{{translate('messages.info')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('admin.users.delivery-man.preview', ['id'=>$dm->id, 'tab'=> 'transaction'])}}"  aria-disabled="true">{{translate('messages.transaction')}}</a>
+                            <a class="nav-link" href="{{route('admin.users.delivery-man.preview', ['id'=>$deliveryMan->id, 'tab'=> 'transaction'])}}"  aria-disabled="true">{{translate('messages.transaction')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('admin.users.delivery-man.preview', ['id'=>$dm->id, 'tab'=> 'conversation'])}}"  aria-disabled="true">{{translate('messages.conversations')}}</a>
+                            <a class="nav-link" href="{{route('admin.users.delivery-man.preview', ['id'=>$deliveryMan->id, 'tab'=> 'conversation'])}}"  aria-disabled="true">{{translate('messages.conversations')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{route('admin.users.delivery-man.preview', ['id'=>$dm->id, 'tab'=> 'disbursement'])}}"  aria-disabled="true">{{translate('messages.disbursements')}}</a>
+                            <a class="nav-link active" href="{{route('admin.users.delivery-man.preview', ['id'=>$deliveryMan->id, 'tab'=> 'disbursement'])}}"  aria-disabled="true">{{translate('messages.disbursements')}}</a>
                         </li>
                     </ul>
                     <!-- End Nav -->
@@ -65,11 +65,11 @@
                         <div id="usersExportDropdown"
                              class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right">
                             <span class="dropdown-header">{{translate('messages.download_options')}}</span>
-                            <a id="export-excel" class="dropdown-item" href="{{route('admin.users.delivery-man.disbursement-export', ['id'=>$dm->id,'type'=>'excel',request()->getQueryString()])}}">
+                            <a id="export-excel" class="dropdown-item" href="{{route('admin.users.delivery-man.disbursement-export', ['id'=>$deliveryMan->id,'type'=>'excel',request()->getQueryString()])}}">
                                 <img class="avatar avatar-xss avatar-4by3 mr-2" src="{{asset('public/assets/admin')}}/svg/components/excel.svg" alt="Image Description">
                                 {{translate('messages.excel')}}
                             </a>
-                            <a id="export-csv" class="dropdown-item" href="{{route('admin.users.delivery-man.disbursement-export', ['id'=>$dm->id,'type'=>'excel',request()->getQueryString()])}}">
+                            <a id="export-csv" class="dropdown-item" href="{{route('admin.users.delivery-man.disbursement-export', ['id'=>$deliveryMan->id,'type'=>'excel',request()->getQueryString()])}}">
                                 <img class="avatar avatar-xss avatar-4by3 mr-2" src="{{asset('public/assets/admin')}}/svg/components/placeholder-csv-format.svg" alt="Image Description">
                                 {{translate('messages.csv')}}
                             </a>
@@ -110,7 +110,7 @@
                                 </td>
                                 <td>
                                     <div>
-                                        {{$disbursement->withdraw_method->method_name}}
+                                        {{$disbursement?->withdraw_method?->method_name ?? translate('messages.N/A')}}
                                     </div>
                                 </td>
                                 <td>
@@ -162,32 +162,21 @@
                                                                 </ul>
                                                             </div>
                                                             <div class="item">
-                                                                {{--                                                                <h5>{{ translate('Owner_Information') }}</h5>--}}
-                                                                {{--                                                                <ul class="item-list">--}}
-                                                                {{--                                                                    <li class="d-flex flex-wrap">--}}
-                                                                {{--                                                                        <span class="name">{{ translate('name') }}</span>--}}
-                                                                {{--                                                                        <span>:</span>--}}
-                                                                {{--                                                                        <strong>{{$disbursement->restaurant->vendor->f_name}} {{$disbursement->restaurant->vendor->l_name}}</strong>--}}
-                                                                {{--                                                                    </li>--}}
-                                                                {{--                                                                    <li class="d-flex flex-wrap">--}}
-                                                                {{--                                                                        <span class="name">{{ translate('email') }}</span>--}}
-                                                                {{--                                                                        <span>:</span>--}}
-                                                                {{--                                                                        <strong>{{$disbursement->restaurant->vendor->email}}</strong>--}}
-                                                                {{--                                                                    </li>--}}
-                                                                {{--                                                                </ul>--}}
+
                                                             </div>
                                                             <div class="item w-100">
                                                                 <h5>{{ translate('Account_Information') }}</h5>
                                                                 <ul class="item-list">
                                                                     <li class="d-flex flex-wrap">
                                                                         <span class="name">{{ translate('payment_method') }}</span>
-                                                                        <strong>{{$disbursement->withdraw_method->method_name}}</strong>
+                                                                        <strong>{{$disbursement?->withdraw_method?->method_name ?? translate('messages.N/A')}}</strong>
                                                                     </li>
                                                                     <li class="d-flex flex-wrap">
                                                                         <span class="name">{{ translate('amount') }}</span>
                                                                         <strong>{{\App\CentralLogics\Helpers::format_currency($disbursement['disbursement_amount'])}}</strong>
                                                                     </li>
-                                                                    @forelse(json_decode($disbursement->withdraw_method->method_fields, true) as $key=> $item)
+                                                                    @if ($disbursement?->withdraw_method?->method_fields)
+                                                                    @forelse(json_decode($disbursement->withdraw_method?->method_fields, true) as $key=> $item)
                                                                         <li class="d-flex flex-wrap">
                                                                             <span class="name">{{  translate($key) }}</span>
                                                                             <strong>{{$item}}</strong>
@@ -195,6 +184,8 @@
                                                                     @empty
 
                                                                     @endforelse
+
+                                                                    @endif
 
                                                                 </ul>
                                                             </div>
@@ -232,23 +223,5 @@
 @endsection
 
 @push('script_2')
-    <script>
-        function request_alert(url, message) {
-            Swal.fire({
-                title: '{{ translate('Are_you_sure?') }}',
-                text: message,
-                type: 'warning',
-                showCancelButton: true,
-                cancelButtonColor: 'default',
-                confirmButtonColor: '#FC6A57',
-                cancelButtonText: '{{ translate('no') }}',
-                confirmButtonText: '{{ translate('yes') }}',
-                reverseButtons: true
-            }).then((result) => {
-                if (result.value) {
-                    location.href = url;
-                }
-            })
-        }
-    </script>
+
 @endpush

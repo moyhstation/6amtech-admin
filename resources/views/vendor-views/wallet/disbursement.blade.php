@@ -88,14 +88,6 @@
             </div>
         </div>
 
-
-
-
-
-
-
-
-
         <div class="card-body p-0">
             <div class="table-responsive">
                 <table class="table table-thead-bordered table-align-middle card-table">
@@ -276,10 +268,6 @@
             {{$disbursements->links()}}
         </div>
     </div>
-    </div>
-    </div>
-    </div>
-
 
     <div class="modal fade" id="payment_model" tabindex="-1"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -322,6 +310,7 @@
             </div>
         </div>
     </div>
+    </div>
 
 
     <div class="modal fade" id="Adjust_wallet" tabindex="-1"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -349,73 +338,56 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
 @endsection
 @push('script_2')
+    <script src="{{asset('public/assets/admin')}}/js/view-pages/vendor/wallet-method.js"></script>
     <script>
+        "use strict";
         $('#withdraw_method').on('change', function () {
-            $('#submit_button').attr("disabled","true");
-            var method_id = this.value;
+    $('#submit_button').attr("disabled","true");
+    let method_id = this.value;
 
-            // Set header if need any otherwise remove setup part
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                url: "{{route('vendor.wallet.method-list')}}" + "?method_id=" + method_id,
-                data: {},
-                processData: false,
-                contentType: false,
-                type: 'get',
-                success: function (response) {\
-                    $('#submit_button').removeAttr('disabled');
-                    let method_fields = response.content.method_fields;
-                    $("#method-filed__div").html("");
-                    method_fields.forEach((element, index) => {
-                        $("#method-filed__div").append(`
+    // Set header if need any otherwise remove setup part
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.ajax({
+        url: "{{route('vendor.wallet.method-list')}}" + "?method_id=" + method_id,
+        data: {},
+        processData: false,
+        contentType: false,
+        type: 'get',
+        success: function (response) {
+            $('#submit_button').removeAttr('disabled');
+            let method_fields = response.content.method_fields;
+            $("#method-filed__div").html("");
+            method_fields.forEach((element, index) => {
+                $("#method-filed__div").append(`
                     <div class="form-group mt-2">
-                        <label for="wr_num" class="fz-16 c1 mb-2">${element.input_name.replaceAll('_', ' ')}</label>
+                        <label for="wr_num" class="fz-16 text-capitalize c1 mb-2">${element.input_name.replaceAll('_', ' ')}</label>
                         <input type="${element.input_type == 'phone' ? 'number' : element.input_type  }" class="form-control" name="${element.input_name}" placeholder="${element.placeholder}" ${element.is_required === 1 ? 'required' : ''}>
                     </div>
                 `);
-                    })
+            })
 
-                },
-                error: function () {
+        },
+        error: function () {
 
-                }
-            });
-        });
-    </script>
-
-    <script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        function showMyModal(data) {
-            $(".modal-body #hiddenValue").html(data);
-            $('#exampleModal').modal('show');
         }
+    });
+});
+
+
+$('.payment-warning').on('click',function (event ){
+            event.preventDefault();
+            toastr.info(
+                "{{ translate('messages.Currently,_there_are_no_payment_options_available._Please_contact_admin_regarding_any_payment_process_or_queries.') }}", {
+                    CloseButton: true,
+                    ProgressBar: true
+                });
+        });
 
     </script>
 @endpush

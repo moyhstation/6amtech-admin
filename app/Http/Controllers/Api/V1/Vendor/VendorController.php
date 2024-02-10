@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\V1\Vendor;
 
 use App\Models\AccountTransaction;
+use App\Models\Admin;
 use App\Models\Item;
 use App\Models\Order;
 use App\Models\Store;
@@ -65,7 +66,7 @@ class VendorController extends Controller
 
         $vendor['Payable_Balance'] =(float) ($vendor?->wallet?->balance  < 0 ? abs($vendor?->wallet?->balance): 0 );
 
-        $wallet_earning =  $vendor?->wallet?->total_earning -($vendor?->wallet?->total_withdrawn + $vendor?->wallet?->pending_withdraw);
+        $wallet_earning =  round($vendor?->wallet?->total_earning -($vendor?->wallet?->total_withdrawn + $vendor?->wallet?->pending_withdraw) , 8);
         $vendor['withdraw_able_balance'] =(float) $wallet_earning ;
 
         if(($vendor?->wallet?->balance > 0 && $vendor?->wallet?->collected_cash > 0 ) || ($vendor?->wallet?->collected_cash != 0 && $wallet_earning !=  0)){
@@ -79,8 +80,9 @@ class VendorController extends Controller
         }
 
         $vendor['show_pay_now_button'] = false;
+        $digital_payment = Helpers::get_business_settings('digital_payment');
 
-        if ($min_amount_to_pay_store <= $vendor?->wallet?->collected_cash){
+        if ($min_amount_to_pay_store <= $vendor?->wallet?->collected_cash && $digital_payment['status'] == 1 &&  $vendor?->wallet?->collected_cash  >  $vendor?->wallet?->balance ){
             $vendor['show_pay_now_button'] = true;
         }
 
@@ -100,20 +102,20 @@ class VendorController extends Controller
             $vendor['dynamic_balance_type']  = translate('messages.Payable_Balance') ;
         }
 
-        $Payable_Balance = $vendor?->wallet?->balance  < 0 ? 1: 0;
+        $Payable_Balance = $vendor?->wallet?->collected_cash  > 0 ? 1: 0;
 
         $cash_in_hand_overflow=  BusinessSetting::where('key' ,'cash_in_hand_overflow_store')->first()?->value;
         $cash_in_hand_overflow_store_amount =  BusinessSetting::where('key' ,'cash_in_hand_overflow_store_amount')->first()?->value;
         $val=  $cash_in_hand_overflow_store_amount - (($cash_in_hand_overflow_store_amount * 10)/100);
 
         $vendor['over_flow_warning'] = false;
-        if($Payable_Balance == 1 &&  $cash_in_hand_overflow &&  $vendor?->wallet?->balance < 0 &&  $val <=  abs($vendor?->wallet?->balance)  &&  $cash_in_hand_overflow_store_amount >= abs($vendor?->wallet?->balance)){
+        if($Payable_Balance == 1 &&  $cash_in_hand_overflow &&  $vendor?->wallet?->balance < 0 &&  $val <=  abs($vendor?->wallet?->collected_cash)  ){
 
             $vendor['over_flow_warning'] = true;
         }
 
         $vendor['over_flow_block_warning'] = false;
-        if ($Payable_Balance == 1 &&  $cash_in_hand_overflow &&  $vendor?->wallet?->balance < 0 &&  $cash_in_hand_overflow_store_amount < abs($vendor?->wallet?->balance)){
+        if ($Payable_Balance == 1 &&  $cash_in_hand_overflow &&  $vendor?->wallet?->balance < 0 &&  $cash_in_hand_overflow_store_amount < abs($vendor?->wallet?->collected_cash)){
             $vendor['over_flow_block_warning'] = true;
         }
 
@@ -409,8 +411,11 @@ class VendorController extends Controller
                     $item->item->increment('order_count');
                 }
             });
-            $order->customer->increment('order_count');
-            $order->store->increment('order_count');
+
+            if($order->is_guest == 0){
+                $order->customer->increment('order_count');
+            }
+            $order?->store?->increment('order_count');
 
 
             $img_names = [];
@@ -665,6 +670,22 @@ class VendorController extends Controller
         $store = $request['vendor']->stores[0];
         $campaign->stores()->attach($store);
         $campaign->save();
+        try
+        {
+            $admin= Admin::where('role_id', 1)->first();
+            $mail_status = Helpers::get_mail_status('campaign_request_mail_status_admin');
+            if(config('mail.status') && $mail_status == '1') {
+                Mail::to($admin->email)->send(new \App\Mail\CampaignRequestMail($store->name));
+            }
+            $mail_status = Helpers::get_mail_status('campaign_request_mail_status_store');
+            if(config('mail.status') && $mail_status == '1') {
+                Mail::to($store->vendor->email)->send(new \App\Mail\VendorCampaignRequestMail($store->name,'pending'));
+            }
+        }
+        catch(\Exception $e)
+        {
+            info($e->getMessage());
+        }
         return response()->json(['message'=>translate('messages.you_are_successfully_joined_to_the_campaign')], 200);
     }
 

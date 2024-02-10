@@ -53,9 +53,9 @@
                     @endif
                 </td>
                 <td>{{translate($at->method)}}</td>
-                @if(  $at['ref'] == ['delivery_man_wallet_adjustment_full'])
+                @if(  $at['ref'] == 'delivery_man_wallet_adjustment_full')
                     <td>{{ translate('wallet_adjusted') }}</td>
-                @elseif( $at['ref'] == [ 'delivery_man_wallet_adjustment_partial']) 
+                @elseif( $at['ref'] == 'delivery_man_wallet_adjustment_partial')
                     <td>{{ translate('wallet_adjusted_partially') }}</td>
                 @else
                     <td>{{$at['ref']}}</td>

@@ -542,6 +542,7 @@ class ItemController extends Controller
             $product = Item::withoutGlobalScope(StoreScope::class)->withoutGlobalScope('translate')->find($request->id);
             $product?->temp_product?->translations()?->delete();
             $product?->temp_product()?->delete();
+            $product?->carts()?->delete();
         }
 
         if ($product->image) {
@@ -701,7 +702,7 @@ class ItemController extends Controller
 
     public function get_items_flashsale(Request $request)
     {
-        $items = Item::withoutGlobalScope(StoreScope::class)->with('store')
+        $items = Item::withoutGlobalScope(StoreScope::class)->with('store')->active()
             ->when($request->zone_id, function ($q) use ($request) {
                 $q->whereHas('store', function ($query) use ($request) {
                     $query->where('zone_id', $request->zone_id);

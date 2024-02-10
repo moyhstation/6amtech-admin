@@ -108,8 +108,8 @@ class WalletController extends Controller
             ['vendor_id' =>Helpers::get_vendor_id()]
         );
 
-        $wallet_earning =  $wallet->total_earning -($wallet->total_withdrawn + $wallet->pending_withdraw);
-        $adj_amount =  $wallet->collected_cash - $wallet_earning;
+        $wallet_earning =  round($wallet->total_earning -($wallet->total_withdrawn + $wallet->pending_withdraw) , 8);
+        $adj_amount =  round($wallet->collected_cash - $wallet_earning , 8);
 
         if($wallet->collected_cash == 0 || $wallet_earning == 0 || ($wallet_earning  == $wallet->balance ) ){
             Toastr::info(translate('Already_Adjusted'));

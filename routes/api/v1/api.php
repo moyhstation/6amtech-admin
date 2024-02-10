@@ -115,10 +115,7 @@ Route::group(['namespace' => 'Api\V1', 'middleware'=>'localization'], function (
                 Route::get('details', 'ConversationController@dm_messages');
                 Route::post('send', 'ConversationController@dm_messages_store');
             });
-
-
         });
-
     });
 
     Route::group(['prefix' => 'vendor', 'namespace' => 'Vendor', 'middleware'=>['vendor.api']], function () {
@@ -291,20 +288,6 @@ Route::group(['namespace' => 'Api\V1', 'middleware'=>'localization'], function (
                 Route::delete('delete', 'CustomerController@delete_address');
             });
 
-            // Route::group(['prefix' => 'order'], function () {
-            //     Route::get('list', 'OrderController@get_order_list');
-            //     Route::get('running-orders', 'OrderController@get_running_orders');
-            //     Route::get('details', 'OrderController@get_order_details');
-            //     Route::post('place', 'OrderController@place_order');
-            //     Route::post('prescription/place', 'OrderController@prescription_place_order');
-            //     Route::put('cancel', 'OrderController@cancel_order');
-            //     Route::post('refund-request', 'OrderController@refund_request');
-            //     Route::get('refund-reasons', 'OrderController@refund_reasons');
-            //     Route::get('track', 'OrderController@track_order');
-            //     Route::put('payment-method', 'OrderController@update_payment_method');
-            //     Route::put('offline-payment', 'OrderController@offline_payment');
-            // });
-
 
             // Chatting
             Route::group(['prefix' => 'message'], function () {
@@ -332,14 +315,10 @@ Route::group(['namespace' => 'Api\V1', 'middleware'=>'localization'], function (
                 Route::post('add-fund', 'WalletController@add_fund');
             });
 
-            // Route::group(['prefix'=>'cart'], function() {
-            //     Route::get('list', 'CartController@get_carts');
-            //     Route::post('add', 'CartController@add_to_cart');
-            //     Route::post('update', 'CartController@update_cart');
-            //     Route::delete('remove-item', 'CartController@remove_cart_item');
-            //     Route::delete('remove', 'CartController@remove_cart');
-            // });
             Route::get('visit-again', 'OrderController@order_again');
+
+            Route::get('review-reminder', 'CustomerController@review_reminder');
+            Route::get('review-reminder-cancel', 'CustomerController@review_reminder_cancel');
 
         });
         Route::group(['prefix' => 'customer', 'middleware' => 'apiGuestCheck'], function () {

@@ -14,7 +14,6 @@ use App\Models\BusinessSetting;
 use App\CentralLogics\SMS_module;
 use App\Models\PhoneVerification;
 use Illuminate\Support\Facades\DB;
-use App\Models\SubscriptionPackage;
 use Gregwar\Captcha\CaptchaBuilder;
 use Illuminate\Support\Facades\App;
 use App\Http\Controllers\Controller;
@@ -22,7 +21,6 @@ use App\Mail\AdminPasswordResetMail;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Crypt;
 use App\Mail\PasswordResetRequestMail;
 use Illuminate\Support\Facades\Cookie;
@@ -39,6 +37,15 @@ class LoginController extends Controller
 
     public function login($login_url)
     {
+        $language = BusinessSetting::where('key', 'system_language')->first();
+        if($language){
+            foreach (json_decode($language->value, true) as $key => $data) {
+                if ($data['default']) {
+                    $lang= $data['code'];
+                    $direction= $data['direction'];
+                }
+            }
+        }
         $data=array_column(DataSetting::whereIn('key',['store_employee_login_url','store_login_url','admin_employee_login_url','admin_login_url'
         ])->get(['key','value'])->toArray(), 'value', 'key');
 
@@ -49,16 +56,16 @@ class LoginController extends Controller
             'vendor_employee' => 'store_employee_login_url'
         ];
         $siteDirections = [
-            'admin' => session()?->get('site_direction') ?? 'ltr',
-            'admin_employee' => session()?->get('site_direction') ?? 'ltr',
-            'vendor' => session()?->get('vendor_site_direction') ?? 'ltr',
-            'vendor_employee' => session()?->get('vendor_site_direction') ?? 'ltr'
+            'admin' => session()?->get('site_direction') ?? $direction ??  'ltr',
+            'admin_employee' => session()?->get('site_direction') ?? $direction ?? 'ltr',
+            'vendor' => session()?->get('vendor_site_direction') ?? $direction ??'ltr',
+            'vendor_employee' => session()?->get('vendor_site_direction') ?? $direction ??'ltr'
         ];
         $locals = [
-            'admin' => session()?->get('local') ?? 'en',
-            'admin_employee' => session()?->get('local') ?? 'en',
-            'vendor' => session()?->get('vendor_local') ?? 'en',
-            'vendor_employee' => session()?->get('vendor_local') ?? 'en'
+            'admin' => session()?->get('local') ?? $lang ?? 'en',
+            'admin_employee' => session()?->get('local') ?? $lang ?? 'en',
+            'vendor' => session()?->get('vendor_local') ?? $lang ?? 'en',
+            'vendor_employee' => session()?->get('vendor_local') ?? $lang ?? 'en'
         ];
         $role = null;
 
@@ -90,24 +97,24 @@ class LoginController extends Controller
 
             // return redirect()->route('vendor.dashboard');
             if ($remember) {
-                    Cookie::queue('role', $role, 120);
-                    Cookie::queue('e_token', Crypt::encryptString($email), 120);
-                    Cookie::queue('p_token', Crypt::encryptString($password), 120);
-                } else {
-                    $user = auth($auth)?->user();
-                    $user?->update([
-                        'remember_token' => null
-                    ]);
-                    Cookie::forget('role');
-                    Cookie::forget('e_token');
-                    Cookie::forget('p_token');
-                }
-                if($auth == 'admin'){
-                    return 'admin';
-                } else {
-                    return 'vendor';
-                }
+                Cookie::queue('role', $role, 120);
+                Cookie::queue('e_token', Crypt::encryptString($email), 120);
+                Cookie::queue('p_token', Crypt::encryptString($password), 120);
+            } else {
+                $user = auth($auth)?->user();
+                $user?->update([
+                    'remember_token' => null
+                ]);
+                Cookie::forget('role');
+                Cookie::forget('e_token');
+                Cookie::forget('p_token');
             }
+            if($auth == 'admin'){
+                return 'admin';
+            } else {
+                return 'vendor';
+            }
+        }
         return false;
     }
 
@@ -154,7 +161,7 @@ class LoginController extends Controller
                 if($vendor->stores[0]->status == 0)
                 {
                     return redirect()->back()->withInput($request->only('email', 'remember'))
-                ->withErrors([translate('messages.inactive_vendor_warning')]);
+                        ->withErrors([translate('messages.inactive_vendor_warning')]);
                 }
             }
         } elseif ($request->role == 'vendor_employee') {
@@ -181,6 +188,12 @@ class LoginController extends Controller
             return redirect()->route('admin.business-settings.business-setup');
         }
         if ($data == 'vendor') {
+            if ($request->role === 'vendor_employee')
+            {
+                $employee = VendorEmployee::where('email', $request->email)->first();
+                $employee->is_logged_in = 1;
+                $employee->save();
+            }
             return redirect()->route('vendor.dashboard');
         }
 
@@ -212,7 +225,7 @@ class LoginController extends Controller
                 'created_at' => now(),
             ]);
             $url = url('/').'/password-reset?token='.$token;
-            // try {
+            try {
                 $mail_status = Helpers::get_mail_status('forget_password_mail_status_admin');
                 if(config('mail.status') && $admin['email'] && $mail_status == '1'){
                     Mail::to($admin['email'])->send(new AdminPasswordResetMail($url,$admin['f_name']));
@@ -220,10 +233,10 @@ class LoginController extends Controller
                 }else{
                     Toastr::error(translate('messages.Failed_to_send_mail'));
                 }
-            // } catch (\Throwable $th) {
-            //     info($th->getMessage());
-            //     Toastr::error(translate('messages.Failed_to_send_mail'));
-            // }
+            } catch (\Throwable $th) {
+                info($th->getMessage());
+                Toastr::error(translate('messages.Failed_to_send_mail'));
+            }
             return back();
         }
         Toastr::error(translate('messages.credential_doesnt_match'));
@@ -247,9 +260,8 @@ class LoginController extends Controller
             ]);
             $url = url('/').'/password-reset?token='.$token;
 
-            $mail_status = Helpers::get_mail_status('forget_password_mail_status_store');
             try {
-                if(config('mail.status') && $vendor['email'] && $mail_status == '1'){
+                if(config('mail.status') && $vendor['email'] ){
                     Mail::to($vendor['email'])->send(new PasswordResetRequestMail($url,$vendor['f_name']));
                     session()->put('log_email_succ',1);
                 }else{
@@ -266,6 +278,15 @@ class LoginController extends Controller
     }
     public function reset_password(Request $request)
     {
+        $language = BusinessSetting::where('key', 'system_language')->first();
+        if($language){
+            foreach (json_decode($language->value, true) as $key => $data) {
+                if ($data['default']) {
+                    $lang= $data['code'];
+                    $direction= $data['direction'];
+                }
+            }
+        }
         $data = DB::table('password_resets')->where(['token' => $request['token']])->first();
         if(!$data || Carbon::parse($data->created_at)->diffInMinutes(Carbon::now()) >= 60){
             Toastr::error(translate('messages.link_expired'));
@@ -277,10 +298,10 @@ class LoginController extends Controller
             $otp = rand(10000, 99999);
             DB::table('phone_verifications')->updateOrInsert(['phone' => $admin['phone']],
                 [
-                'token' => $otp,
-                'otp_hit_count' => 0,
-                'created_at' => now(),
-                'updated_at' => now(),
+                    'token' => $otp,
+                    'otp_hit_count' => 0,
+                    'created_at' => now(),
+                    'updated_at' => now(),
                 ]);
             //for payment and sms gateway addon
             $published_status = 0;
@@ -294,8 +315,9 @@ class LoginController extends Controller
             }else{
                 $response = SMS_module::send($admin['phone'],$otp);
             }
-            $site_direction = session()?->get('site_direction') ?? 'ltr';
-            $locale = session()?->get('local') ?? 'en';
+            $site_direction = session()?->get('site_direction') ?? $direction ??  'ltr';
+            $locale = session()?->get('local') ??  $lang ?? 'en';
+
             App::setLocale($locale);
             if($response != 'success')
             {
@@ -303,8 +325,8 @@ class LoginController extends Controller
             }
             return view('auth.verify-otp', compact('token','admin','site_direction','locale'));
         }else{
-            $site_direction = session()?->get('vendor_site_direction') ?? 'ltr';
-            $locale = session()?->get('vendor_local') ?? 'en';
+            $site_direction = session()?->get('vendor_site_direction') ?? $direction ?? 'ltr';
+            $locale = session()?->get('vendor_local') ??  $lang ?? 'en';
             App::setLocale($locale);
             return view('auth.reset-password', compact('token','site_direction','locale'));
         }
@@ -318,6 +340,15 @@ class LoginController extends Controller
             'reset_token'=> 'required',
             'opt-value'=> 'required',
         ]);
+        $language = BusinessSetting::where('key', 'system_language')->first();
+        if($language){
+            foreach (json_decode($language->value, true) as $key => $data) {
+                if ($data['default']) {
+                    $lang= $data['code'];
+                    $direction= $data['direction'];
+                }
+            }
+        }
         $token = $request['reset_token'];
         $admin = Admin::where('phone',$request['phone'])->where('role_id',1)->first();
 
@@ -328,8 +359,8 @@ class LoginController extends Controller
 
         if (isset($data)) {
             $data?->delete();
-            $site_direction = session()?->get('site_direction') ?? 'ltr';
-            $locale = session()?->get('local') ?? 'en';
+            $site_direction = session()?->get('site_direction') ?? $direction ??'ltr';
+            $locale = session()?->get('local') ?? $lang ??  'en';
             App::setLocale($locale);
             return view('auth.reset-password', compact('token','admin','site_direction','locale'));
         }
@@ -393,17 +424,17 @@ class LoginController extends Controller
     public function otp_resent(Request $request){
         $data = DB::table('password_resets')->where(['token' => $request['token']])->first();
         if(!$data || Carbon::parse($data->created_at)->diffInMinutes(Carbon::now()) >= 60){
-                return response()->json(['errors' => 'link_expired']);
+            return response()->json(['errors' => 'link_expired']);
         }
         if($data->created_by == 'admin'){
             $admin = Admin::where('email',$data->email)->where('role_id',1)->first();
             $otp = rand(10000, 99999);
             DB::table('phone_verifications')->updateOrInsert(['phone' => $admin['phone']],
                 [
-                'token' => $otp,
-                'otp_hit_count' => 0,
-                'created_at' => now(),
-                'updated_at' => now(),
+                    'token' => $otp,
+                    'otp_hit_count' => 0,
+                    'created_at' => now(),
+                    'updated_at' => now(),
                 ]);
             //for payment and sms gateway addon
             $published_status = 0;
@@ -423,6 +454,6 @@ class LoginController extends Controller
             }
             return response()->json(['success' => 'otp_send' ]);
 
+        }
     }
-}
 }

@@ -126,11 +126,6 @@ class ReportController extends Controller
             return Excel::download(new ExpenseReportExport($data), 'ExpenseReport.csv');
         }
 
-        // if ($request->type == 'excel') {
-        //     return (new FastExcel(Helpers::export_expense_wise_report($expense)))->download('ExpenseReport.xlsx');
-        // } elseif ($request->type == 'csv') {
-        //     return (new FastExcel(Helpers::export_expense_wise_report($expense)))->download('ExpenseReport.csv');
-        // }
     }
 
     public function disbursement_report(Request $request)

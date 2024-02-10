@@ -16,8 +16,12 @@ class CategoryController extends Controller
         try {
             $key = explode(' ', $search);
             $featured = $request->query('featured');
-            $categories = Category::withCount(['products','childes'])->with(['childes' => function($query)  {
-                $query->withCount(['products','childes']);
+            $categories = Category::withCount(['products','childes'=> function($query){
+                $query->where('status',1);
+            } ])->with(['childes' => function($query)  {
+                $query->where('status',1)->withCount(['products','childes'=> function($query){
+                    $query->where('status',1);
+                }]);
             }])
             ->where(['position'=>0,'status'=>1])
             ->when(config('module.current_module_data'), function($query){
@@ -197,7 +201,6 @@ class CategoryController extends Controller
         $validator = Validator::make($request->all(), [
             'limit' => 'required',
             'offset' => 'required',
-            // 'category_ids' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -207,7 +210,6 @@ class CategoryController extends Controller
         $zone_id= $request->header('zoneId');
 
         $type = $request->query('type', 'all');
-        // $category_ids = $request['category_ids']?json_decode($request['category_ids']):'';
 
         $data = CategoryLogic::featured_category_products($zone_id, $request['limit'], $request['offset'], $type);
         $data['products'] = Helpers::product_data_formatting($data['products'] , true, false, app()->getLocale());
