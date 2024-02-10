@@ -3598,4 +3598,9 @@
   'Change status to confirmed' => 'تغيير الحالة إلى تم القبول؟',
   'Proceed  If thermal printer is ready.' => 'متابعة إذا كانت الطابعة الحرارية جاهزة.',
   'Proceed _If_thermal_printer_is_ready.' => 'تابع إذا كانت الطابعة الحرارية جاهزة.',
+  'landing_page_promotion_banner_updated' => 'Landing page promotion banner updated',
+  'deleted' => 'Deleted',
+  'promotion_banner' => 'Promotion banner',
+  'download_app_section_updated' => 'Download app section updated',
+  'اسم_صاحب_الحساب:' => 'اسم صاحب الحساب:',
 );

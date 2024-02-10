@@ -27,6 +27,13 @@ class Paytabs
 
     function send_api_request($request_url, $data, $request_method = null)
     {
+        // info('Paytabs Request: data' . json_encode($data));
+        // info('Paytabs Request: config_values - Profile ID: ' . $this->config_values->profile_id);
+        // info('Paytabs Request: config_values ' . json_encode($this->config_values));
+        // https://secure.paytabs.sa/payment/request/payment/request 
+        // https://secure.paytabs.sa/payment/request
+        // info('Paytabs Request: full url ' . $this->config_values->base_url . '/' . $request_url);
+
         $data['profile_id'] = $this->config_values->profile_id;
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -43,6 +50,7 @@ class Paytabs
             ),
         ));
 
+        
         $response = json_decode(curl_exec($curl), true);
         curl_close($curl);
         return $response;
@@ -116,6 +124,7 @@ class PaytabsController extends Controller
                 "country" => "N/A",
                 "zip" => "00000"
             ],
+            "hide_shipping" => true,
             "shipping_details" => [
                 "name" => "N/A",
                 "email" => "N/A",

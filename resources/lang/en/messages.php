@@ -3650,4 +3650,6 @@
   'order_canceled_successfully' => 'Order canceled successfully',
   'category_updated_successfully' => 'Category updated successfully',
   'office' => 'Office',
+  'license_code_is_required' => 'License code is required',
+  'Failed_to_send_mail' => 'Failed to send mail',
 );
