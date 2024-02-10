@@ -1052,7 +1052,6 @@ class BusinessSettingsController extends Controller
         } elseif ($request['gateway'] == 'paystack') {
             $additional_data = [
                 'status' => 'required|in:1,0',
-                'callback_url' => 'required_if:status,1',
                 'public_key' => 'required_if:status,1',
                 'secret_key' => 'required_if:status,1',
                 'merchant_email' => 'required_if:status,1'
@@ -1210,40 +1209,6 @@ class BusinessSettingsController extends Controller
         }
 
         return back();
-    }
-
-    public function landing_page_settings($tab)
-    {
-        if ($tab == 'index') {
-            return view('admin-views.business-settings.landing-page-settings.index');
-        } else if ($tab == 'links') {
-            return view('admin-views.business-settings.landing-page-settings.links');
-        } else if ($tab == 'speciality') {
-            return view('admin-views.business-settings.landing-page-settings.speciality');
-        } else if ($tab == 'testimonial') {
-            return view('admin-views.business-settings.landing-page-settings.testimonial');
-        } else if ($tab == 'feature') {
-            return view('admin-views.business-settings.landing-page-settings.feature');
-        } else if ($tab == 'joinas') {
-            return view('admin-views.business-settings.landing-page-settings.join-as');
-        } else if ($tab == 'download-section') {
-            return view('admin-views.business-settings.landing-page-settings.download-app-section');
-        } else if ($tab == 'promotion-banner') {
-            return view('admin-views.business-settings.landing-page-settings.promotion-banner');
-        } else if ($tab == 'module-section') {
-            $module = Helpers::get_business_settings('module_section');
-            return view('admin-views.business-settings.landing-page-settings.module-section', compact('module'));
-        } else if ($tab == 'image') {
-            return view('admin-views.business-settings.landing-page-settings.image');
-        } else if ($tab == 'background-change') {
-            return view('admin-views.business-settings.landing-page-settings.backgroundChange');
-        } else if ($tab == 'web-app') {
-            return view('admin-views.business-settings.landing-page-settings.web-app');
-        } else if ($tab == 'react') {
-            return view('admin-views.business-settings.landing-page-settings.react');
-        } else if ($tab == 'react-feature') {
-            return view('admin-views.business-settings.landing-page-settings.react_feature');
-        }
     }
 
     public function update_landing_page_settings(Request $request, $tab)
@@ -2362,10 +2327,7 @@ class BusinessSettingsController extends Controller
         return back();
     }
 
-    public function location_index()
-    {
-        return view('admin-views.business-settings.location-index');
-    }
+
 
     public function location_setup(Request $request)
     {
@@ -3974,6 +3936,15 @@ class BusinessSettingsController extends Controller
         }
 
         if ($tab == 'download-app-section') {
+
+            $request->validate([
+                'download_user_app_title.0' => 'required',
+                'download_user_app_sub_title.0' => 'required',
+            ],[
+                'download_user_app_title.0.required' => translate('messages.Default_title_is_required'),
+                'download_user_app_sub_title.0.required' => translate('messages.Default_subtitle_is_required'),
+            ]);
+
             $download_user_app_title = DataSetting::where('type', 'react_landing_page')->where('key', 'download_user_app_title')->first();
             if ($download_user_app_title == null) {
                 $download_user_app_title = new DataSetting();
@@ -4552,6 +4523,15 @@ class BusinessSettingsController extends Controller
 
                 Toastr::success(translate('messages.business_section_updated'));
         } elseif ($tab == 'header-section') {
+            $request->validate([
+                'header_title.0' => 'required',
+                'header_sub_title.0' => 'required',
+                'banner_image' => 'required',
+            ],[
+                'header_title.0.required' => translate('messages.Default_title_is_required'),
+                'header_sub_title.0.required' => translate('messages.Default_subtitle_is_required'),
+                'banner_image.required' => translate('messages.Banner_image_is_required'),
+            ]);
                 $header_title = DataSetting::where('type', 'react_landing_page')->where('key', 'header_title')->first();
                 if ($header_title == null) {
                     $header_title = new DataSetting();
@@ -4681,6 +4661,20 @@ class BusinessSettingsController extends Controller
 
                 Toastr::success(translate('messages.header_section_updated'));
         } elseif ($tab == 'company-section') {
+
+
+            $request->validate([
+                'company_title.0' => 'required',
+                'company_sub_title.0' => 'required',
+                'company_button_url' => 'required_unless:company_button_name.0,!=,null',
+                'company_button_name.0' => 'required_unless:company_button_url,!=,null',
+            ],[
+                'company_title.0.required' => translate('messages.Default_title_is_required'),
+                'company_sub_title.0.required' => translate('messages.Default_subtitle_is_required'),
+                'company_button_name.0.required_unless' => translate('messages.Default_button_name_is_required'),
+                'company_button_url.required_unless' => translate('messages.Button_redirec_url_is_required'),
+            ]);
+
                 $company_title = DataSetting::where('type', 'react_landing_page')->where('key', 'company_title')->first();
                 if ($company_title == null) {
                     $company_title = new DataSetting();
@@ -4872,6 +4866,18 @@ class BusinessSettingsController extends Controller
             $fixed_promotional_banner->save();
             Toastr::success(translate('messages.landing_page_promotion_banner_updated'));
         } else if ($tab == 'fixed-newsletter') {
+
+
+            $request->validate([
+                'fixed_newsletter_title.0' => 'required',
+                'fixed_newsletter_sub_title.0' => 'required',
+            ],[
+                'fixed_newsletter_title.0.required' => translate('messages.Default_title_is_required'),
+                'fixed_newsletter_sub_title.0.required' => translate('messages.Default_subtitle_is_required'),
+
+            ]);
+
+
             $fixed_newsletter_title = DataSetting::where('type', 'react_landing_page')->where('key', 'fixed_newsletter_title')->first();
             if ($fixed_newsletter_title == null) {
                 $fixed_newsletter_title = new DataSetting();

@@ -15,6 +15,9 @@ class FlashSale extends Model
         'updated_at' => 'datetime',
         'start_date' => 'datetime',
         'end_date' => 'datetime',
+        'module_id' => 'integer',
+        'vendor_discount_percentage' => 'float',
+        'admin_discount_percentage' => 'float',
     ];
 
     public function translations()
@@ -46,7 +49,7 @@ class FlashSale extends Model
 
     public function activeProducts()
     {
-        return $this->hasMany(FlashSaleItem::class,'flash_sale_id','id')->where('status',1)->whereHas('item.store',function($query){
+        return $this->hasMany(FlashSaleItem::class,'flash_sale_id','id')->where('available_stock' ,'>' ,0 )->where('status',1)->whereHas('item.store',function($query){
             $query->active();
         });
     }

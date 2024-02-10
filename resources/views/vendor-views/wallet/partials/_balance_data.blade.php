@@ -5,7 +5,7 @@
     $disbursement_type = \App\Models\BusinessSetting::where('key' , 'disbursement_type')->first()->value ?? 'manual';
     $min_amount_to_pay_store = \App\Models\BusinessSetting::where('key' , 'min_amount_to_pay_store')->first()->value ?? 0;
 
-    $wallet_earning =  $wallet->total_earning - ($wallet->total_withdrawn + $wallet->pending_withdraw);
+    $wallet_earning =  round($wallet->total_earning - ($wallet->total_withdrawn + $wallet->pending_withdraw) , 8);
 
     if($wallet->balance > 0 && $wallet->collected_cash > 0 ){
         $adjust_able = true;
@@ -17,6 +17,10 @@
     else{
         $adjust_able = false;
     }
+
+    $digital_payment = App\CentralLogics\Helpers::get_business_settings('digital_payment');
+    $digital_payment  = $digital_payment['status'];
+
     ?>
 
     @if($adjust_able ==  true  || ($disbursement_type ==  'manual' && $wallet->balance > 0) || $wallet->balance < 0 || ( $wallet->collected_cash > 0 && $min_amount_to_pay_store <= $wallet->collected_cash ))
@@ -86,7 +90,7 @@
 
                         </div>
 
-                        @if($wallet->balance > 0  )
+                        @if($wallet->balance > 0  &&  $wallet->balance > $wallet->collected_cash  )
                             <div class="d-flex gap-2 flex-wrap">
                                 @if ($adjust_able ==  true )
                                     <a class="btn btn--primary d-flex gap-1 align-items-center text-nowrap"  href="javascript:" data-toggle="modal" data-target="#Adjust_wallet">{{translate('messages.Adjust_with_wallet')}}
@@ -101,8 +105,17 @@
                                     </a>
                                 @endif
 
-                                @if ($disbursement_type ==  'manual' )
-                                    <a class="btn btn--primary d-flex gap-1 align-items-center text-nowrap" href="javascript:" data-toggle="modal" data-target="#balance-modal">{{translate('messages.request_withdraw')}}
+                                @if ($disbursement_type ==  'manual'  )
+                                    <a  href="javascript:"
+
+                                       @if(count($withdrawal_methods) !== 0 )
+                                           class="btn btn--primary d-flex gap-1 align-items-center text-nowrap"
+                                       data-toggle="modal" data-target="#balance-modal"
+                                        @else
+                                            class="btn btn--primary d-flex gap-1 align-items-center text-nowrap withdrawal-methods-disable"
+                                        data-message="{{translate('Withdraw_methods_are_not_available')}}"
+                                       @endif
+                                    >{{translate('messages.request_withdraw')}}
 
                                         <span class="form-label-secondary  d-flex"
                                               data-toggle="tooltip" data-placement="right"
@@ -111,7 +124,7 @@
                                     </a>
                                 @endif
                             </div>
-                        @elseif($wallet->balance < 0 ||  $wallet->collected_cash > 0)
+                        @elseif($wallet->balance < 0 ||  ($wallet->collected_cash > 0 && $wallet->collected_cash  > $wallet->balance )     )
                             <div class="d-flex gap-2 flex-wrap">
 
                                 @if ($adjust_able ==  true )
@@ -123,8 +136,18 @@
                                     </a>
                                 @endif
 
-                                @if ($min_amount_to_pay_store <= $wallet->collected_cash)
-                                    <a class="btn btn--primary d-flex gap-1 align-items-center text-nowrap"  href="javascript:" data-toggle="modal" data-target="#payment_model">{{translate('messages.Pay_Now')}}
+                                @if ($min_amount_to_pay_store <= $wallet->collected_cash )
+                                    <a
+                                    @if ( $digital_payment != 1)
+                                    class="btn btn--secondary d-flex gap-1 align-items-center text-nowrap payment-warning"  href="javascript:"
+
+                                    @else
+
+                                    class="btn btn--primary d-flex gap-1 align-items-center text-nowrap"  href="javascript:"
+                                    data-toggle="modal" data-target="#payment_model"
+                                    @endif
+
+                                    >{{translate('messages.Pay_Now')}}
 
                                         <span class="form-label-secondary  d-flex"
                                               data-toggle="tooltip" data-placement="right"
@@ -217,7 +240,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"        aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -230,7 +253,6 @@
             <div class="modal-body">
 
                 <div class="form-group">
-                    {{-- <label for="hiddenValue" class="mb-2">{{ translate('messages.Note') }}</label> --}}
                     <p  id="hiddenValue"> </p>
                 </div>
             </div>

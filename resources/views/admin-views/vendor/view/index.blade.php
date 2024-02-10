@@ -94,8 +94,15 @@
                 <div class="col-lg-6">
                     <div class="resturant--info-address">
                         <div class="logo">
-                            <img onerror="this.src='{{asset('public/assets/admin/img/100x100/1.png')}}'"
-                        src="{{asset('storage/app/public/store')}}/{{$store->logo}}" alt="{{$store->name}} Logo">
+                            <img class="onerror-image" data-onerror-image="{{asset('public/assets/admin/img/100x100/1.png')}}"
+                            src="{{ \App\CentralLogics\Helpers::onerror_image_helper(
+                                $store->logo ?? '',
+                                asset('storage/app/public/store').'/'.$store->logo ?? '',
+                                asset('public/assets/admin/img/100x100/1.png'),
+                                'store/'
+                            ) }}"
+
+                            alt="{{$store->name}} Logo">
                         </div>
                         <ul class="address-info list-unstyled list-unstyled-py-3 text-dark">
                             <li>
@@ -137,8 +144,19 @@
                 <div class="card-body">
                     <div class="resturant--info-address">
                         <div class="avatar avatar-xxl avatar-circle avatar-border-lg">
-                            <img class="avatar-img" onerror="this.src='{{asset('public/assets/admin/img/160x160/img1.jpg')}}'"
-                        src="{{asset('storage/app/public/vendor')}}/{{$store->vendor->image}}" alt="Image Description">
+                            <img class="avatar-img onerror-image" data-onerror-image="{{asset('public/assets/admin/img/160x160/img1.jpg')}}"
+
+                            src="{{ \App\CentralLogics\Helpers::onerror_image_helper(
+                                $store->vendor->image ?? '',
+                                asset('storage/app/public/vendor').'/'.$store->vendor->image ?? '',
+                                asset('public/assets/admin/img/160x160/img1.jpg'),
+                                'vendor/'
+                            ) }}"
+
+
+
+
+                            alt="Image Description">
                         </div>
                         <ul class="address-info address-info-2 list-unstyled list-unstyled-py-3 text-dark">
                             <li>
@@ -158,40 +176,40 @@
             </div>
         </div>
         @if($store->vendor->status)
-        <div class="col-lg-6">
-            <div class="card h-100">
-                <div class="card-header">
-                    <h5 class="card-title m-0 d-flex align-items-center">
-                        <span class="card-header-icon mr-2">
-                            <i class="tio-museum"></i>
-                        </span>
-                        <span class="ml-1">{{translate('messages.bank_info')}}</span>
-                    </h5>
-                </div>
-                <div class="card-body d-flex flex-column justify-content-center">
-                    <ul class="list-unstyled list-unstyled-py-3 text-dark">
-                        @if($store->vendor->bank_name)
-                        <li class="pb-1 pt-1">
-                            <strong class="text--title">{{translate('messages.bank_name')}}:</strong> {{$store->vendor->bank_name ? $store->vendor->bank_name : 'No Data found'}}
-                        </li>
-                        <li class="pb-1 pt-1">
-                            <strong class="text--title">{{translate('messages.branch')}}  :</strong> {{$store->vendor->branch ? $store->vendor->branch : 'No Data found'}}
-                        </li>
-                        <li class="pb-1 pt-1">
-                            <strong class="text--title">{{translate('messages.holder_name')}} :</strong> {{$store->vendor->holder_name ? $store->vendor->holder_name : 'No Data found'}}
-                        </li>
-                        <li class="pb-1 pt-1">
-                            <strong class="text--title">{{translate('messages.account_no')}}  :</strong> {{$store->vendor->account_no ? $store->vendor->account_no : 'No Data found'}}
-                        </li>
-                        @else
-                        <li class="my-auto">
-                            <center class="card-subtitle">{{ translate('messages.No Data found') }}</center>
-                        </li>
-                        @endif
-                    </ul>
-                </div>
-            </div>
-        </div>
+{{--        <div class="col-lg-6">--}}
+{{--            <div class="card h-100">--}}
+{{--                <div class="card-header">--}}
+{{--                    <h5 class="card-title m-0 d-flex align-items-center">--}}
+{{--                        <span class="card-header-icon mr-2">--}}
+{{--                            <i class="tio-museum"></i>--}}
+{{--                        </span>--}}
+{{--                        <span class="ml-1">{{translate('messages.bank_info')}}</span>--}}
+{{--                    </h5>--}}
+{{--                </div>--}}
+{{--                <div class="card-body d-flex flex-column justify-content-center">--}}
+{{--                    <ul class="list-unstyled list-unstyled-py-3 text-dark">--}}
+{{--                        @if($store->vendor->bank_name)--}}
+{{--                        <li class="pb-1 pt-1">--}}
+{{--                            <strong class="text--title">{{translate('messages.bank_name')}}:</strong> {{$store->vendor->bank_name ? $store->vendor->bank_name : 'No Data found'}}--}}
+{{--                        </li>--}}
+{{--                        <li class="pb-1 pt-1">--}}
+{{--                            <strong class="text--title">{{translate('messages.branch')}}  :</strong> {{$store->vendor->branch ? $store->vendor->branch : 'No Data found'}}--}}
+{{--                        </li>--}}
+{{--                        <li class="pb-1 pt-1">--}}
+{{--                            <strong class="text--title">{{translate('messages.holder_name')}} :</strong> {{$store->vendor->holder_name ? $store->vendor->holder_name : 'No Data found'}}--}}
+{{--                        </li>--}}
+{{--                        <li class="pb-1 pt-1">--}}
+{{--                            <strong class="text--title">{{translate('messages.account_no')}}  :</strong> {{$store->vendor->account_no ? $store->vendor->account_no : 'No Data found'}}--}}
+{{--                        </li>--}}
+{{--                        @else--}}
+{{--                        <li class="my-auto">--}}
+{{--                            <div class="text-center card-subtitle">{{ translate('messages.No Data found') }}</div>--}}
+{{--                        </li>--}}
+{{--                        @endif--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
         @endif
     </div>
 </div>
@@ -238,14 +256,14 @@
 
 @push('script_2')
     <!-- Page level plugins -->
+    <script src="https://maps.googleapis.com/maps/api/js?key={{\App\Models\BusinessSetting::where('key', 'map_api_key')->first()->value}}&callback=initMap&v=3.45.8" ></script>
     <script>
+        "use strict";
         // Call the dataTables jQuery plugin
         $(document).ready(function () {
             $('#dataTable').DataTable();
         });
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key={{\App\Models\BusinessSetting::where('key', 'map_api_key')->first()->value}}&callback=initMap&v=3.45.8" ></script>
-    <script>
+
         const myLatLng = { lat: {{$store->latitude}}, lng: {{$store->longitude}} };
         let map;
         initMap();
@@ -260,12 +278,11 @@
                 title: "{{$store->name}}",
             });
         }
-    </script>
-    <script>
+
         $(document).on('ready', function () {
             // INITIALIZATION OF DATATABLES
             // =======================================================
-            var datatable = $.HSCore.components.HSDatatables.init($('#columnSearchDatatable'));
+            let datatable = $.HSCore.components.HSDatatables.init($('#columnSearchDatatable'));
 
             $('#column1_search').on('keyup', function () {
                 datatable
@@ -299,7 +316,7 @@
             // INITIALIZATION OF SELECT2
             // =======================================================
             $('.js-select2-custom').each(function () {
-                var select2 = $.HSCore.components.HSSelect2.init($(this));
+                let select2 = $.HSCore.components.HSSelect2.init($(this));
             });
         });
 
@@ -320,11 +337,10 @@
             }
         })
     }
-    </script>
-    <script>
+
         $('#add_transaction').on('submit', function (e) {
             e.preventDefault();
-            var formData = new FormData(this);
+            let formData = new FormData(this);
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -338,7 +354,7 @@
                 processData: false,
                 success: function (data) {
                     if (data.errors) {
-                        for (var i = 0; i < data.errors.length; i++) {
+                        for (let i = 0; i < data.errors.length; i++) {
                             toastr.error(data.errors[i].message, {
                                 CloseButton: true,
                                 ProgressBar: true

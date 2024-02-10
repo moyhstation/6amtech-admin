@@ -21,6 +21,6 @@ class StoreWallet extends Model
         if ($this->total_earning <= 0){
             return (float)0;
         }
-        return (float) ($this->total_earning - ($this->total_withdrawn + $this->pending_withdraw + $this->collected_cash));
+        return (float) round(($this->total_earning - ($this->total_withdrawn + $this->pending_withdraw + $this->collected_cash)) , 8);
     }
 }
