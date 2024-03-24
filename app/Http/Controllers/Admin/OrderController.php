@@ -362,30 +362,33 @@ class OrderController extends Controller
             info("IAM KIROO HEEERRREEEE SENDNIG WEBHOOK FROM ADMIN");
             $order = Order::with('details', 'offline_payments', 'parcel_category', 'store', 'refund', 'payments', 'customer')->find($request->id);
 
+            info("order id is" . $request->id);
+            info("order" . $order);
+
             $delivery_address = json_decode($order->delivery_address);
 
             $customerData = [
-                'is_guest' => $order->is_guest,
-                'id' => $order->user_id,
-                'name' => $delivery_address->contact_person_name,
-                'email' => $delivery_address->contact_person_email,
-                'phone' => $delivery_address->contact_person_number,
-                'address' => $delivery_address->address,
-                'latitude' => $delivery_address->latitude,
-                'longitude' => $delivery_address->longitude,
-                'floor' => $delivery_address->floor,
-                'road' => $delivery_address->road,
-                'house' => $delivery_address->house,
+                'is_guest' => $order->is_guest ?? null,
+                'id' => $order->user_id ?? null,
+                'name' => $delivery_address->contact_person_name ?? null,
+                'email' => $delivery_address->contact_person_email ?? null,
+                'phone' => $delivery_address->contact_person_number ?? null,
+                'address' => $delivery_address->address ?? null,
+                'latitude' => $delivery_address->latitude ?? null,
+                'longitude' => $delivery_address->longitude ?? null,
+                'floor' => $delivery_address->floor ?? null,
+                'road' => $delivery_address->road ?? null,
+                'house' => $delivery_address->house ?? null,
             ];
 
             $vendorData = [
-                'id' => $order->store->id,
-                'name' => $order->store->name,
-                'email' => $order->store->email,
-                'phone' => $order->store->phone,
-                'address' => $order->store->address,
-                'latitude' => $order->store->latitude,
-                'longitude' => $order->store->longitude,
+                'id' => $order->store->id ?? null,
+                'name' => $order->store->name ?? null,
+                'email' => $order->store->email ?? null,
+                'phone' => $order->store->phone ?? null,
+                'address' => $order->store->address ?? null,
+                'latitude' => $order->store->latitude ?? null,
+                'longitude' => $order->store->longitude ?? null,
             ];
 
             $paymentData = [
