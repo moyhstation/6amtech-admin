@@ -3926,4 +3926,11 @@
   'If you disable this, the Deliveryman will deliver the order and update the status. He doesn’t need to verify the order with any code.' => 'If you disable this  the Deliveryman will deliver the order and update the status. He doesn’t need to verify the order with any code.',
   'order_cancellation_reason_added_successfully' => 'Order cancellation reason added successfully',
   'default_reason_is_required' => 'Default reason is required',
+  'User will get a clear message to know that the offline order is denied.' => 'User will get a clear message to know that the offline order is denied.',
+  'If_enabled,_delivery_men_have_to_provide_collected_cash_by_themselves.' => 'If enabled  delivery men have to provide collected cash by themselves.',
+  'By Turning ON Promotional Banner Section' => 'By Turning ON Promotional Banner Section',
+  'if_enabled,_the_user_app_download_button_will_be_visible_on_react_landing_page' => 'If enabled  the user app download button will be visible on react landing page',
+  'want_to_disable_the_app_store_button_for_user_app' => 'Want to disable the app store button for user app',
+  'by_turning_on_this_review' => 'By turning on this review',
+  'want_to_enable_the_app_store_button_for_user_app' => 'Want to enable the app store button for user app',
 );
